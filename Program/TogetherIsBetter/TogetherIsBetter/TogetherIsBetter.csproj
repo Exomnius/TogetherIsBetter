@@ -78,54 +78,64 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="aspnet_Applications.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>TIB_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="aspnet_Membership.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>TIB_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="aspnet_Paths.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>TIB_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="aspnet_PersonalizationAllUsers.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>TIB_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="aspnet_PersonalizationPerUser.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>TIB_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="aspnet_Profile.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>TIB_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="aspnet_Roles.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>TIB_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="aspnet_SchemaVersions.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>TIB_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="aspnet_Users.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>TIB_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="aspnet_WebEvent_Events.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>TIB_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Company.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>TIB_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Contract.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>TIB_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="ContractFormula.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>TIB_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Location.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>TIB_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Reservation.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>TIB_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TIB_Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TIB_Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TIB_Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TIB_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TIB_Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TIB_Model.edmx</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -134,16 +144,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DataModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -168,41 +168,32 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DataModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="DataModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-      <LastGenOutput>DataModel.Context.cs</LastGenOutput>
-    </None>
-    <None Include="DataModel.edmx.diagram">
-      <DependentUpon>DataModel.edmx</DependentUpon>
-    </None>
-    <None Include="DataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-      <LastGenOutput>DataModel.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <EntityDeploy Include="TIB_Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TIB_Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="TIB_Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TIB_Model.edmx</DependentUpon>
+      <LastGenOutput>TIB_Model.Context.cs</LastGenOutput>
+    </None>
+    <None Include="TIB_Model.edmx.diagram">
+      <DependentUpon>TIB_Model.edmx</DependentUpon>
+    </None>
+    <None Include="TIB_Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TIB_Model.edmx</DependentUpon>
+      <LastGenOutput>TIB_Model.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="AB4_SQLserver.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="AB4_SQLserver_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>AB4_SQLserver.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -20,7 +20,7 @@ namespace TogetherIsBetter
     /// </summary>
     public partial class MainWindow : Window
     {
-        private AB4_SQLserverEntities db;
+        private TIB_Model db;
         public MainWindow()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace TogetherIsBetter
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            using (db = new AB4_SQLserverEntities()){
+            using (db = new TIB_Model()){
                 //get all objects
                 var query = from b in db.Company
                             orderby b.Name 
