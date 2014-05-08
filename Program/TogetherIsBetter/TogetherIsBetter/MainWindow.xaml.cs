@@ -20,9 +20,45 @@ namespace TogetherIsBetter
     /// </summary>
     public partial class MainWindow : Window
     {
+        private AB4_SQLserverEntities db;
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            using (db = new AB4_SQLserverEntities()){
+                //get all objects
+                var query = from b in db.Company
+                            orderby b.Name 
+                            select b;
+                
+                List<Company> companies = new List<Company>();
+                foreach (var item in query)
+                {
+                    companies.Add(item);
+                } 
+
+               test1.Text = companies[1].Name;
+
+                //lookup by key
+               Location loc = db.Location.Find(1);
+               test2.Text = loc.Name;
+
+                //lookup by where
+               Location loca = db.Location.Where(b => b.Name.Equals("Room 1")).FirstOrDefault();
+               test3.Text = loca.Name;
+                
+                //all objects in table
+               List<Reservation> reserves = new List<Reservation>();
+               reserves = db.Reservation.ToList();
+
+               foreach (Reservation r in reserves)
+               {
+                   testlijst.Items.Add(r.Id + "" + r.Company.Name + r.StartDate.ToString());
+               }
+            }
         }
     }
 }

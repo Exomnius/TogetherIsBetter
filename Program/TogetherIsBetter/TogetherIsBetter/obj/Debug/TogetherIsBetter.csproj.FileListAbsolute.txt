@@ -1,2 +1,21 @@
 c:\users\cornel\documents\visual studio 2013\Projects\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.exe.config
 C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.exe.config
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.csprojResolveAssemblyReference.cache
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\MainWindow.baml
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\MainWindow.g.cs
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\App.g.cs
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter_Content.g.cs
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter_MarkupCompile.cache
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.g.resources
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.Properties.Resources.resources
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.csproj.GenerateResource.Cache
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\AB4_SQLserver.mdf
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\AB4_SQLserver_log.ldf
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.exe
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.pdb
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.dll
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.SqlServer.dll
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.xml
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.SqlServer.xml
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.exe
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.pdb
