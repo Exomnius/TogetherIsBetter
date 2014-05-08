@@ -1,1 +1,2 @@
 c:\users\cornel\documents\visual studio 2013\Projects\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.exe.config
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.exe.config
