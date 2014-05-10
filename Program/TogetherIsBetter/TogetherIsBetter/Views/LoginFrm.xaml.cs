@@ -31,19 +31,7 @@ namespace TogetherIsBetter
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            // Add default user 
-            MembershipUserCollection collection = Membership.FindUsersByName("admin");
-
-            if (collection.Count == 0)
-            {
-                Membership.CreateUser("admin", "admin!");
-
-                if (!Roles.RoleExists("admin"))
-                    Roles.CreateRole("admin");
-                if (Roles.IsUserInRole("admin", "admin"))
-                    Roles.AddUserToRole("admin", "admin");
-            } 
-           
+            setDefaultUsers();
             
             String username, password;
 
@@ -68,6 +56,35 @@ namespace TogetherIsBetter
             }
 
 
+        }
+
+        // Add default user and admin
+        private void setDefaultUsers()
+        {
+            
+            MembershipUserCollection collection = Membership.FindUsersByName("admin");
+
+            if (collection.Count == 0)
+            {
+                Membership.CreateUser("admin", "admin!");
+
+                if (!Roles.RoleExists("admin"))
+                    Roles.CreateRole("admin");
+                if (Roles.IsUserInRole("admin", "admin"))
+                    Roles.AddUserToRole("admin", "admin");
+            }
+
+            collection = Membership.FindUsersByName("user");
+
+            if (collection.Count == 0)
+            {
+                Membership.CreateUser("user", "user!");
+
+                if (!Roles.RoleExists("user"))
+                    Roles.CreateRole("user");
+                if (Roles.IsUserInRole("user", "user"))
+                    Roles.AddUserToRole("user", "user");
+            } 
         }
 
         private void Login_Closing(object sender, System.ComponentModel.CancelEventArgs e)

@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using TogetherIsBetter.Model;
 
 namespace TogetherIsBetter
 {
@@ -22,6 +23,10 @@ namespace TogetherIsBetter
 
             if (result)
             {
+                // init global vars
+                Global.companies = Companies.getCompanies();
+                
+                // show main window
                 MainWindow appmainwindow = new MainWindow(user);
                 Application.Current.MainWindow = appmainwindow;
                 appmainwindow.Activate();

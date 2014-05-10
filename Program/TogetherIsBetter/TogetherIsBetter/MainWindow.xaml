@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="clr-namespace:MonthCalendar;assembly=MonthCalendar"
-        Title="overview" Height="840" Width="840" Closing="Window_Closing_1">
+        Title="overview" Height="840" Width="840" Closing="Window_Closing_1" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <!--Header-->
@@ -20,6 +20,12 @@
 
         <!--Header-->
         <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Right" Orientation="Horizontal" Margin="10,0">
+            <Button x:Name="btnManageClients" Margin="5" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1" Click="btnManageClients_Click">
+                <DockPanel>
+                    <Image Source="images/gear.png" Height="15" Margin="0,0,5,0"/>
+                    <TextBlock VerticalAlignment="center">Manage clients</TextBlock>
+                </DockPanel>
+            </Button>
             <Button x:Name="btnManagement" Margin="5" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1">
                 <DockPanel>
                     <Image Source="images/gear.png" Height="15" Margin="0,0,5,0"/>
@@ -32,7 +38,7 @@
                     <TextBlock VerticalAlignment="center">Profile</TextBlock>
                 </DockPanel>
             </Button>
-            <Button x:Name="btnLogout" Margin="5" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1">
+            <Button x:Name="btnLogout" Margin="5" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1" Click="btnLogout_Click">
                 <DockPanel>
                     <Image Source="images/logout.png" Height="15" Margin="0,0,5,0"/>
                     <TextBlock VerticalAlignment="center">Logout</TextBlock>

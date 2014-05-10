@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TogetherIsBetter.Model;
+using TogetherIsBetter.Views;
 
 namespace TogetherIsBetter
 {
@@ -21,38 +23,34 @@ namespace TogetherIsBetter
     /// </summary>
     public partial class MainWindow : Window
     {
-        private TIB_Model db;
-        private User user; // check if admin: user.Role.equals("admin")
+        private User user; // check if admin: user.Role == "admin"
+        private List<Appointment> _myAppointmentsList = new List<Appointment>();
 
         public MainWindow(User user)
         {
             InitializeComponent();
             this.user = user;
-        }
 
-        private List<Appointment> _myAppointmentsList = new List<Appointment>();
+            if (user.Role != "admin")
+                this.btnManagement.Visibility = Visibility.Hidden;   
+        }      
 
-        public MainWindow()
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            InitializeComponent();
-            Loaded += Window1_Loaded;
-        }
+            List<Reservation> reservations = Companies.getReservations();
 
-        private void Window1_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            Random rand = new Random(System.DateTime.Now.Second);
-
-            for (int i = 1; i <= 20; i++)
+            for (int i = 0; i < reservations.Count; i++)
             {
                 Appointment apt = new Appointment();
                 apt.AppointmentID = i;
-                apt.StartTime = new System.DateTime(System.DateTime.Now.Year, 5, i);
-                apt.EndTime = apt.StartTime;
-                apt.Subject = "Random apt, blah blah";
+                apt.StartTime = reservations[i].StartDate;
+                apt.EndTime = reservations[i].EndDate;
+                apt.Subject = Global.companies.Find(c => c.Id == reservations[i].CompanyId).Name;
                 _myAppointmentsList.Add(apt);
             }
 
             SetAppointments();
+            
         }
 
         private void DayBoxDoubleClicked_event(NewAppointmentEventArgs e)
@@ -82,6 +80,20 @@ namespace TogetherIsBetter
         {
             Application.Current.Shutdown();
         }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void btnManageClients_Click(object sender, RoutedEventArgs e)
+        {
+            CompanyManageFrm clientFrm = new CompanyManageFrm();
+            clientFrm.ShowDialog();
+        }
+
+
+  
         
     }
 }
