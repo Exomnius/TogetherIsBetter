@@ -1,1 +1,86 @@
 c:\users\cornel\documents\visual studio 2013\Projects\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.exe.config
+<<<<<<< remotes/origin/master
+=======
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.exe.config
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.csprojResolveAssemblyReference.cache
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\MainWindow.baml
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\MainWindow.g.cs
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\App.g.cs
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter_MarkupCompile.cache
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.g.resources
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.Properties.Resources.resources
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.csproj.GenerateResource.Cache
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.exe
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.pdb
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.dll
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.SqlServer.dll
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.xml
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.SqlServer.xml
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.exe
+C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.pdb
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick 2\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.exe.config
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick 2\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.exe
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick 2\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.pdb
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick 2\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.exe
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick 2\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.pdb
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick 2\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick 2\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.SqlServer.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick 2\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.xml
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick 2\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.SqlServer.xml
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick 2\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.csprojResolveAssemblyReference.cache
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick 2\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\MainWindow.baml
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick 2\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\MainWindow.g.cs
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick 2\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\App.g.cs
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick 2\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter_MarkupCompile.cache
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick 2\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.g.resources
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick 2\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.Properties.Resources.resources
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick 2\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.csproj.GenerateResource.Cache
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.exe.config
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.exe
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.pdb
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.exe
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.pdb
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.SqlServer.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.xml
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.SqlServer.xml
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\MonthCalendar.pdb
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.csprojResolveAssemblyReference.cache
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\MainWindow.baml
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\overview.baml
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\MainWindow.g.cs
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\overview.g.cs
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\App.g.cs
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter_MarkupCompile.cache
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.g.resources
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.Properties.Resources.resources
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.csproj.GenerateResource.Cache
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Forms\LoginFrm.baml
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Forms\LoginFrm.g.cs
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Forms\RegisterFrm.baml
+d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Forms\RegisterFrm.g.cs
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.exe.config
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.exe
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.pdb
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.exe
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.pdb
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.dll
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.SqlServer.dll
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.xml
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.SqlServer.xml
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\MonthCalendar.pdb
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.csprojResolveAssemblyReference.cache
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Forms\LoginFrm.baml
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Forms\RegisterFrm.baml
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\MainWindow.baml
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\overview.baml
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Forms\LoginFrm.g.cs
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Forms\RegisterFrm.g.cs
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\MainWindow.g.cs
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\overview.g.cs
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\App.g.cs
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter_MarkupCompile.cache
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.g.resources
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.Properties.Resources.resources
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.csproj.GenerateResource.Cache
+>>>>>>> local
