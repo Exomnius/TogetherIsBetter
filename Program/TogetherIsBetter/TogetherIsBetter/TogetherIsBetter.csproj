@@ -65,6 +65,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -121,10 +122,11 @@
     <Compile Include="ContractFormula.cs">
       <DependentUpon>TIB_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LoginFrm.xaml.cs">
+    <Compile Include="User.cs" />
+    <Compile Include="Views\LoginFrm.xaml.cs">
       <DependentUpon>LoginFrm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RegisterFrm.xaml.cs">
+    <Compile Include="Views\RegisterFrm.xaml.cs">
       <DependentUpon>RegisterFrm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Location.cs">
@@ -151,11 +153,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TIB_Model.edmx</DependentUpon>
     </Compile>
-    <Page Include="Forms\LoginFrm.xaml">
+    <Page Include="Views\LoginFrm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Forms\RegisterFrm.xaml">
+    <Page Include="Views\RegisterFrm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

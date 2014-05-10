@@ -4,29 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< HEAD
 D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\
-=======
-d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\
->>>>>>> arno
 TogetherIsBetter
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
 D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\App.xaml
-4-1234146228
+41472481660
 
-26-137350606
-19-1732377128
-=======
-d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\App.xaml
-4-1234146228
-
-26-137350606
-19171538801
->>>>>>> arno
-Forms\LoginFrm.xaml;Forms\RegisterFrm.xaml;MainWindow.xaml;overview.xaml;
+27105853513
+20362857059
+Views\LoginFrm.xaml;Views\RegisterFrm.xaml;MainWindow.xaml;overview.xaml;
 
 False
 

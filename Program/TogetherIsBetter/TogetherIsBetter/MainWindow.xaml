@@ -1,18 +1,53 @@
 ﻿<Window x:Class="TogetherIsBetter.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
+        xmlns:mc="clr-namespace:MonthCalendar;assembly=MonthCalendar"
+        Title="overview" Height="840" Width="840" Closing="Window_Closing_1">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Name="test1" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="28,41,0,0"/>
-        <TextBox HorizontalAlignment="Left" Name="test2" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="28,69,0,0"/>
-        <TextBox HorizontalAlignment="Left" x:Name="test3" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="28,97,0,0"/>
-        <ListView HorizontalAlignment="Left" Name="testlijst" Height="162" VerticalAlignment="Top" Width="461" Margin="28,136,0,0">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <Grid.RowDefinitions>
+            <!--Header-->
+            <RowDefinition Height="auto"/>
+            <!--Title bar-->
+            <RowDefinition Height="auto"/>
+            <!--calendar-->
+            <RowDefinition Height="auto"/>
+            <!--Extra Buttons-->
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <!--Header-->
+        <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Right" Orientation="Horizontal" Margin="10,0">
+            <Button x:Name="btnManagement" Margin="5" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1">
+                <DockPanel>
+                    <Image Source="images/gear.png" Height="15" Margin="0,0,5,0"/>
+                    <TextBlock VerticalAlignment="center">Management</TextBlock>
+                </DockPanel>
+            </Button>
+            <Button x:Name="btnProfile" Margin="5" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1">
+                <DockPanel>
+                    <Image Source="images/user.png" Height="15" Margin="0,0,5,0"/>
+                    <TextBlock VerticalAlignment="center">Profile</TextBlock>
+                </DockPanel>
+            </Button>
+            <Button x:Name="btnLogout" Margin="5" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1">
+                <DockPanel>
+                    <Image Source="images/logout.png" Height="15" Margin="0,0,5,0"/>
+                    <TextBlock VerticalAlignment="center">Logout</TextBlock>
+                </DockPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Left" Orientation="Horizontal">
+            <Image Source="images/logo.jpg" Height="50" Margin="5" VerticalAlignment="center"/>
+            <Label Content="TogetherIsBetter" VerticalAlignment="center" FontSize="20" FontWeight="Bold"/>
+        </StackPanel>
+        <!--Title-->
+        <Rectangle Grid.Row="1" Grid.Column="0" Height="20" Fill="White"/>
+        <!--Calendar-->
+        <mc:MonthCalendarControl x:Name="AptCalendar" Grid.Row="2" Grid.Column="0" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch"
+                                    DisplayMonthChanged="DisplayMonthChanged" DayBoxDoubleClicked="DayBoxDoubleClicked_event"
+                                    AppointmentDblClicked="AppointmentDblClicked" Padding="10"/>
     </Grid>
 </Window>
