@@ -10,11 +10,19 @@ none
 false
 DEBUG;TRACE
 D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\App.xaml
+<<<<<<< HEAD
 11151548125
 
 9-1838253777
 12-1401562060
 MainWindow.xaml;
+=======
+4-1234146228
+
+3042142119
+19-1732377128
+Forms\LoginFrm.xaml;Forms\RegisterFrm.xaml;MainWindow.xaml;overview.xaml;
+>>>>>>> arno
 
 False
 

@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="aspnet_Applications">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredApplicationName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="aspnet_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="PasswordFormat" Type="int" Nullable="false" />
+    <Property Name="PasswordSalt" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="MobilePIN" Type="nvarchar" MaxLength="16" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+    <Property Name="IsApproved" Type="bit" Nullable="false" />
+    <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+    <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
+    <Property Name="Comment" Type="ntext" />
+  </EntityType>
+  <EntityType Name="aspnet_Paths">
+    <Key>
+      <PropertyRef Name="PathId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Path" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredPath" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_PersonalizationAllUsers">
+    <Key>
+      <PropertyRef Name="PathId" />
+    </Key>
+    <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PageSettings" Type="image" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_PersonalizationPerUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PathId" Type="uniqueidentifier" />
+    <Property Name="UserId" Type="uniqueidentifier" />
+    <Property Name="PageSettings" Type="image" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Profile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PropertyNames" Type="ntext" Nullable="false" />
+    <Property Name="PropertyValuesString" Type="ntext" Nullable="false" />
+    <Property Name="PropertyValuesBinary" Type="image" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredRoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="aspnet_SchemaVersions">
+    <Key>
+      <PropertyRef Name="Feature" />
+      <PropertyRef Name="CompatibleSchemaVersion" />
+    </Key>
+    <Property Name="Feature" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="CompatibleSchemaVersion" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="IsCurrentVersion" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredUserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+    <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+    <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_WebEvent_Events">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="EventTimeUtc" Type="datetime" Nullable="false" />
+    <Property Name="EventTime" Type="datetime" Nullable="false" />
+    <Property Name="EventType" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="EventSequence" Type="decimal" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="EventOccurrence" Type="decimal" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="EventCode" Type="int" Nullable="false" />
+    <Property Name="EventDetailCode" Type="int" Nullable="false" />
+    <Property Name="Message" Type="nvarchar" MaxLength="1024" />
+    <Property Name="ApplicationPath" Type="nvarchar" MaxLength="256" />
+    <Property Name="ApplicationVirtualPath" Type="nvarchar" MaxLength="256" />
+    <Property Name="MachineName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="RequestUrl" Type="nvarchar" MaxLength="1024" />
+    <Property Name="ExceptionType" Type="nvarchar" MaxLength="256" />
+    <Property Name="Details" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Street" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Zipcode" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Country" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="12" />
+    <Property Name="Emplyees" Type="int" />
+  </EntityType>
+  <EntityType Name="Contract">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number" Type="int" Nullable="false" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="ContractFormulaId" Type="int" />
+  </EntityType>
+  <EntityType Name="ContractFormula">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="MaxUsageHoursPerPeriod" Type="int" />
+    <Property Name="PeriodInMonths" Type="int" />
+    <Property Name="NoticePeriodInMonths" Type="int" />
+    <Property Name="Price" Type="decimal" Precision="6" Scale="2" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reservation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number" Type="int" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="CompanyId" Type="int" Nullable="false" />
+    <Property Name="LocationId" Type="int" Nullable="false" />
+    <Property Name="CreateDate" Type="date" />
+  </EntityType>
+  <Association Name="FK__aspnet_Me__Appli__7A672E12">
+    <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="Self.aspnet_Membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__UserI__7B5B524B">
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="Self.aspnet_Membership" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pa__Appli__7C4F7684">
+    <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Paths" Type="Self.aspnet_Paths" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Paths">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__7D439ABD">
+    <End Role="aspnet_Paths" Type="Self.aspnet_Paths" Multiplicity="1" />
+    <End Role="aspnet_PersonalizationAllUsers" Type="Self.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationAllUsers">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__7E37BEF6">
+    <End Role="aspnet_Paths" Type="Self.aspnet_Paths" Multiplicity="0..1" />
+    <End Role="aspnet_PersonalizationPerUser" Type="Self.aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__UserI__7F2BE32F">
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="0..1" />
+    <End Role="aspnet_PersonalizationPerUser" Type="Self.aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pr__UserI__00200768">
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Profile" Type="Self.aspnet_Profile" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Profile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Ro__Appli__01142BA1">
+    <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Roles" Type="Self.aspnet_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Roles">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__Appli__02084FDA">
+    <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Users">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__RoleI__02FC7413">
+    <End Role="aspnet_Roles" Type="Self.aspnet_Roles" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="Self.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__UserI__03F0984C">
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="Self.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ContComp">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contract">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ContForm">
+    <End Role="ContractFormula" Type="Self.ContractFormula" Multiplicity="0..1" />
+    <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContractFormula">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contract">
+        <PropertyRef Name="ContractFormulaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ResComp">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ResLoc">
+    <End Role="Location" Type="Self.Location" Multiplicity="1" />
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="aspnet_Applications" EntityType="Self.aspnet_Applications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_Membership" EntityType="Self.aspnet_Membership" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_Paths" EntityType="Self.aspnet_Paths" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_PersonalizationAllUsers" EntityType="Self.aspnet_PersonalizationAllUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_PersonalizationPerUser" EntityType="Self.aspnet_PersonalizationPerUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_Profile" EntityType="Self.aspnet_Profile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_Roles" EntityType="Self.aspnet_Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_SchemaVersions" EntityType="Self.aspnet_SchemaVersions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_Users" EntityType="Self.aspnet_Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_UsersInRoles" EntityType="Self.aspnet_UsersInRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_WebEvent_Events" EntityType="Self.aspnet_WebEvent_Events" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contract" EntityType="Self.Contract" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContractFormula" EntityType="Self.ContractFormula" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reservation" EntityType="Self.Reservation" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__aspnet_Me__Appli__7A672E12" Association="Self.FK__aspnet_Me__Appli__7A672E12">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__UserI__7B5B524B" Association="Self.FK__aspnet_Me__UserI__7B5B524B">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pa__Appli__7C4F7684" Association="Self.FK__aspnet_Pa__Appli__7C4F7684">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__7D439ABD" Association="Self.FK__aspnet_Pe__PathI__7D439ABD">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__7E37BEF6" Association="Self.FK__aspnet_Pe__PathI__7E37BEF6">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__UserI__7F2BE32F" Association="Self.FK__aspnet_Pe__UserI__7F2BE32F">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pr__UserI__00200768" Association="Self.FK__aspnet_Pr__UserI__00200768">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Ro__Appli__01142BA1" Association="Self.FK__aspnet_Ro__Appli__01142BA1">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__Appli__02084FDA" Association="Self.FK__aspnet_Us__Appli__02084FDA">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__RoleI__02FC7413" Association="Self.FK__aspnet_Us__RoleI__02FC7413">
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__UserI__03F0984C" Association="Self.FK__aspnet_Us__UserI__03F0984C">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ContComp" Association="Self.fk_ContComp">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Contract" EntitySet="Contract" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ContForm" Association="Self.fk_ContForm">
+      <End Role="ContractFormula" EntitySet="ContractFormula" />
+      <End Role="Contract" EntitySet="Contract" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ResComp" Association="Self.fk_ResComp">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Reservation" EntitySet="Reservation" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ResLoc" Association="Self.fk_ResLoc">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Reservation" EntitySet="Reservation" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

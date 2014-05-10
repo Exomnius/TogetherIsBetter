@@ -1,6 +1,9 @@
 c:\users\cornel\documents\visual studio 2013\Projects\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.exe.config
+<<<<<<< HEAD
 <<<<<<< remotes/origin/master
 =======
+=======
+>>>>>>> arno
 C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.exe.config
 C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.csprojResolveAssemblyReference.cache
 C:\C# Project\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\MainWindow.baml
@@ -62,6 +65,7 @@ d:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBet
 D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.exe.config
 D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.exe
 D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.pdb
+<<<<<<< HEAD
 D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.exe
 D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.pdb
 D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.dll
@@ -84,3 +88,5 @@ D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\T
 D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.Properties.Resources.resources
 D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.csproj.GenerateResource.Cache
 >>>>>>> local
+=======
+>>>>>>> arno
