@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,32 @@ namespace TogetherIsBetter.Model
     {
 
         private static TIB_Model db;
+
+        public static void saveCompany(Company company)
+        {
+            try
+            {
+                using (db = new TIB_Model())
+                {
+                    if (company.Id != 0)
+                    {
+                        db.Company.Attach(company);
+                        db.Entry(company).State = EntityState.Modified;                        
+                    }
+                    else
+                    {
+                        db.Company.Add(company);
+                    }
+
+                    db.SaveChanges();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public static List<Company> getCompanies()
         {
@@ -49,6 +76,25 @@ namespace TogetherIsBetter.Model
                 throw ex;
             }
         }
-                 
+
+
+        public static void deleteCompany(Company company)
+        {
+            try
+            {
+                using (db = new TIB_Model())
+                {
+                    db.Company.Attach(company);
+                    db.Company.Remove(company);
+                    db.SaveChanges();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

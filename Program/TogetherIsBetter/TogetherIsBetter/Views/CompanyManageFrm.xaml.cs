@@ -23,9 +23,15 @@ namespace TogetherIsBetter.Views
         public CompanyManageFrm()
         {
             InitializeComponent();
-            
-            // reload companies
+            loadCompanies();
+        }
+
+        // reloads all companies and refreshes ListBox
+        public void loadCompanies()
+        {
             Global.companies = Companies.getCompanies();
+
+            lbClients.Items.Clear();
 
             foreach (Company company in Global.companies)
             {
@@ -38,43 +44,76 @@ namespace TogetherIsBetter.Views
         {
             Company nCompany = new Company();
 
-            CompanyFrm cFrm = new CompanyFrm(nCompany);
-            bool result = (bool)cFrm.ShowDialog();
-            cFrm.Close();
-
-            if (result)
-            {
-
-            }
+            int index = lbClients.SelectedIndex;
+            saveUpdateCompany(nCompany);
 
         }
 
         private void btnEditClient_Click(object sender, RoutedEventArgs e)
         {
             int index = lbClients.SelectedIndex;
+            if (index == -1) return;
 
-            CompanyFrm cFrm = new CompanyFrm(Global.companies[index]);
-            bool result = (bool)cFrm.ShowDialog();
-            cFrm.Close();
-
-            if (result)
-            {
-
-            }
+            saveUpdateCompany(Global.companies[index]);
         }
 
         private void lbClients_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             int index = lbClients.SelectedIndex;
+            saveUpdateCompany(Global.companies[index]);
+        }
 
-            CompanyFrm cFrm = new CompanyFrm(Global.companies[index]);
+        private void btnDeleteClient_Click(object sender, RoutedEventArgs e)
+        {
+            int index = lbClients.SelectedIndex;
+            if (index == -1) return;
+
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this company?", "Are you sure?", MessageBoxButton.YesNo);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    Companies.deleteCompany(Global.companies[index]);
+                    MessageBox.Show("The company was removed successfully", "Company removed", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    Console.Write(ex.ToString());
+                    MessageBox.Show("There was a problem removing this company from the database. Please try again later or contact a sysadmin.", "Database Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                
+                // reload companies and refresh ListBox
+                loadCompanies();
+            }
+
+            
+        }
+
+        public void saveUpdateCompany(Company company)
+        {
+            CompanyFrm cFrm = new CompanyFrm(company);
             bool result = (bool)cFrm.ShowDialog();
             cFrm.Close();
 
             if (result)
             {
+                try
+                {
+                    Companies.saveCompany(company);
+                    MessageBox.Show("The company was saved successfully", "Company saved", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    Console.Write(ex.ToString());
+                    MessageBox.Show("There was a problem saving this company to the database. Please try again later or contact a sysadmin.", "Database Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
 
+                // reload companies and refresh ListBox
+                loadCompanies();
             }
         }
+
+       
     }
 }

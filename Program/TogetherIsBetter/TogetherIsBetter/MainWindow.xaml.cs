@@ -89,7 +89,7 @@ namespace TogetherIsBetter
         private void btnManageClients_Click(object sender, RoutedEventArgs e)
         {
             CompanyManageFrm clientFrm = new CompanyManageFrm();
-            clientFrm.ShowDialog();
+            clientFrm.Show();
         }
 
 

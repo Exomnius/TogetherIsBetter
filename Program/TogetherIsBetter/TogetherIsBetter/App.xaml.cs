@@ -18,8 +18,12 @@ namespace TogetherIsBetter
         {
             User user = new User();
 
-            LoginForm loginFrm = new LoginForm(user);
-            bool result = (bool)loginFrm.ShowDialog();            
+            user.Role = "admin";
+            user.Username = "admin";
+            bool result = true;
+
+            //LoginForm loginFrm = new LoginForm(user);
+            //bool result = (bool)loginFrm.ShowDialog();            
 
             if (result)
             {
