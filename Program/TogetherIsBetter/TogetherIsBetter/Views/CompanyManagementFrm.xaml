@@ -1,0 +1,41 @@
+﻿<Window x:Class="TogetherIsBetter.Views.CompanyManagementFrm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ManageClientsFrm" Height="248" Width="588">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="67*"/>
+            <RowDefinition Height="49"/>
+        </Grid.RowDefinitions>
+
+
+
+
+        <Label Grid.Row="0" Content="All clients" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top" Height="26" Width="87"/>
+        <ListBox x:Name="lbClients" Grid.Row="1" Margin="10,0" Grid.RowSpan="1" MouseDoubleClick="lbClients_MouseDoubleClick"/>
+
+
+        <StackPanel Grid.Row="3" Margin="0,2,10,10" MinHeight="40" Width="231" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button x:Name="btnNewClient" Margin="5" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1" Click="btnNewClient_Click">
+                <DockPanel>
+                    <Image Source="../images/add.png" Height="15" Margin="0,0,5,0"/>
+                    <TextBlock VerticalAlignment="center">New</TextBlock>
+                </DockPanel>
+            </Button>
+            <Button x:Name="btnEditClient" Margin="5" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1" Click="btnEditClient_Click">
+                <DockPanel>
+                    <Image Source="../images/edit.png" Height="15" Margin="0,0,5,0"/>
+                    <TextBlock VerticalAlignment="center">Edit</TextBlock>
+                </DockPanel>
+            </Button>
+            <Button x:Name="btnDeleteClient" Margin="5" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1" Click="btnDeleteClient_Click">
+                <DockPanel>
+                    <Image Source="../images/remove.png" Height="15" Margin="0,0,5,0"/>
+                    <TextBlock VerticalAlignment="center">Delete</TextBlock>
+                </DockPanel>
+            </Button>
+        </StackPanel>
+
+    </Grid>
+</Window>

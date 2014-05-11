@@ -88,8 +88,14 @@ namespace TogetherIsBetter
 
         private void btnManageClients_Click(object sender, RoutedEventArgs e)
         {
-            CompanyManageFrm clientFrm = new CompanyManageFrm();
+            CompanyManagementFrm clientFrm = new CompanyManagementFrm();
             clientFrm.Show();
+        }
+
+        private void btnManagement_Click(object sender, RoutedEventArgs e)
+        {
+            ContractManagementFrm contractFrm = new ContractManagementFrm();
+            contractFrm.Show();
         }
 
 

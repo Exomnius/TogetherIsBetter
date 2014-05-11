@@ -10,6 +10,7 @@ namespace TogetherIsBetter.Model
     {
         // Global list variables
         public static List<Company> companies;
-
+        public static List<Contract> contracts;
+        public static List<ContractFormula> contractFormula;
     }
 }
