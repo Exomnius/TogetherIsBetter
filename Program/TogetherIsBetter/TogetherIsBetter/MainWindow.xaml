@@ -20,16 +20,10 @@
 
         <!--Header-->
         <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Right" Orientation="Horizontal" Margin="10,0">
-            <Button x:Name="btnManageClients" Margin="5" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1" Click="btnManageClients_Click">
+            <Button x:Name="btnManagement" Margin="5,18" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1" Click="btnManagement_Click" Width="112">
                 <DockPanel>
                     <Image Source="images/gear.png" Height="15" Margin="0,0,5,0"/>
-                    <TextBlock VerticalAlignment="center" Text="Clients"/>
-                </DockPanel>
-            </Button>
-            <Button x:Name="btnManagement" Margin="5" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1" Click="btnManagement_Click">
-                <DockPanel>
-                    <Image Source="images/gear.png" Height="15" Margin="0,0,5,0"/>
-                    <TextBlock VerticalAlignment="center" Text="Contracts"/>
+                    <TextBlock VerticalAlignment="center" Text="Management"/>
                 </DockPanel>
             </Button>
             <Button x:Name="btnProfile" Margin="5" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1">

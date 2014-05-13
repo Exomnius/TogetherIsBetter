@@ -86,15 +86,10 @@ namespace TogetherIsBetter
             Application.Current.Shutdown();
         }
 
-        private void btnManageClients_Click(object sender, RoutedEventArgs e)
-        {
-            CompanyManagementFrm clientFrm = new CompanyManagementFrm();
-            clientFrm.Show();
-        }
 
         private void btnManagement_Click(object sender, RoutedEventArgs e)
         {
-            ContractManagementFrm contractFrm = new ContractManagementFrm();
+            ManagementFrm contractFrm = new ManagementFrm();
             contractFrm.Show();
         }
 

@@ -62,90 +62,82 @@ namespace TogetherIsBetter.Views
             phone = phone.Replace(".", "");
 
             // validate values
-            if (name == "")
+
+            if (Val.isEmpty(name))
             {
                 error += "Name can't be empty. \n";
             }
-            else if (name.Length > 12)
+            else if (Val.isLongerThan(name, 12))
             {
                 error += "Name can't be more than 12 characters long. \n";
             }
 
-            if (street == "")
+            if (Val.isEmpty(street))
             {
                 error += "Street can't be empty. \n";
             }
-            else if (street.Length > 12)
+            else if (Val.isLongerThan(street, 20))
             {
                 error += "Street can't be more than 20 characters long. \n";
             }
 
-            if (zipcode == "")
+            if (Val.isEmpty(zipcode))
             {
                 error += "Zipcode can't be empty. \n";
             }
-            else if (zipcode.Length > 6)
+            else if (Val.isLongerThan(zipcode, 6))
             {
                 error += "City can't be more than 6 characters long. \n";
             }
-            else
+            else if(!Val.isNumber(zipcode))
             {
-                int result = -1;
-                Int32.TryParse(zipcode, out result);
-                if (result == -1)
-                {
-                    error += "Zipcode must be a number. \n";
-                }
+                error += "Zipcode must be a number. \n";
             }
 
-            if (city == "")
+            if (Val.isEmpty(city))
             {
                 error += "City can't be empty. \n";
             }
-            else if (city.Length > 20)
+            else if (Val.isLongerThan(city, 20))
             {
                 error += "City can't be more than 20 characters long. \n";
             }
 
-            if (country == "")
+            if (Val.isEmpty(country))
             {
                 error += "Country can't be empty. \n";
             }
-            else if (country.Length > 20)
+            else if (Val.isLongerThan(country, 20))
             {
                 error += "Country can't be more than 20 characters long. \n";
             }
 
-            if (email == "")
+            if (Val.isEmpty(email))
             {
                 error += "Email can't be empty. \n";
             }
-            else if (email.Length > 50)
+            else if (Val.isLongerThan(email, 50))
             {
                 error += "Email can't be more than 50 characters long. \n";
             }
-            else
+            else if (!Val.isEmail(email))
             {
-                Match match = Regex.Match(email, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-                if (!match.Success)
-                {
-                    error += "Email must be valid. \n";
-                }
+                error += "Email must be valid. \n";
             }
 
 
-            if (phone != "" && phone.Length > 12)
+            if (Val.isEmpty(phone) &&  Val.isLongerThan(phone, 12))
             {
                 error += "Phone can't be more than 12 characters long. \n";
             }
 
-            if (employeesString.Length != 0){
-            
+            if (Val.isEmpty(employeesString) && Val.isNumber(employeesString))
+            {
+                error += "Employees must be a number. \n";
+            }
+            else
+            {
                 Int32.TryParse(employeesString, out employees);
-                if (employees == -1)
-                {
-                    error += "Employees must be a number. \n";
-                }
             }
 
             // check if there was an error

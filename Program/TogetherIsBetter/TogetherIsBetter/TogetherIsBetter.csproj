@@ -124,19 +124,21 @@
     </Compile>
     <Compile Include="Model\Companies.cs" />
     <Compile Include="Model\Contracts.cs" />
+    <Compile Include="Model\Generic.cs" />
     <Compile Include="Model\Global.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="Val.cs" />
     <Compile Include="Views\CompanyFrm.xaml.cs">
       <DependentUpon>CompanyFrm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ContractManagementFrm.xaml.cs">
-      <DependentUpon>ContractManagementFrm.xaml</DependentUpon>
+    <Compile Include="Views\ContractFrm.xaml.cs">
+      <DependentUpon>ContractFrm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ManagementFrm.xaml.cs">
+      <DependentUpon>ManagementFrm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginFrm.xaml.cs">
       <DependentUpon>LoginFrm.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\CompanyManagementFrm.xaml.cs">
-      <DependentUpon>CompanyManagementFrm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterFrm.xaml.cs">
       <DependentUpon>RegisterFrm.xaml</DependentUpon>
@@ -166,15 +168,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ContractManagementFrm.xaml">
+    <Page Include="Views\ContractFrm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ManagementFrm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\LoginFrm.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\CompanyManagementFrm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

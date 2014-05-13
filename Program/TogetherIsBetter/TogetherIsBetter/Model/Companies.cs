@@ -57,7 +57,7 @@ namespace TogetherIsBetter.Model
                 throw ex;
             }
         }
-
+        
         public static List<Reservation> getReservations(){
 
             try

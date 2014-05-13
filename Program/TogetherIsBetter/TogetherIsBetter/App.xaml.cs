@@ -20,6 +20,8 @@ namespace TogetherIsBetter
 
             user.Role = "admin";
             user.Username = "admin";
+            //user.Role = "user";
+            //user.Username = "user";
             bool result = true;
 
             //LoginForm loginFrm = new LoginForm(user);
