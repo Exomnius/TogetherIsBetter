@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TogetherIsBetter.Model;
 
 namespace TogetherIsBetter.Views
 {
@@ -19,9 +20,20 @@ namespace TogetherIsBetter.Views
     /// </summary>
     public partial class ContractFrm : Window
     {
-        public ContractFrm()
+
+        public Contract contract;
+
+        public ContractFrm(Contract contract)
         {
             InitializeComponent();
+            this.contract = contract;
+
+            tboNumber.Text = contract.Number.ToString();
+            dateStart.SelectedDate = contract.StartDate;
+            dateEnd.SelectedDate = contract.EndDate;
+
+            cboCompany.DataContext = Global.companies;
+            cboContractFormula.DataContext = Global.contractFormula;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -31,7 +43,8 @@ namespace TogetherIsBetter.Views
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-
+            this.DialogResult = false;
+            this.Hide();
         }
     }
 }

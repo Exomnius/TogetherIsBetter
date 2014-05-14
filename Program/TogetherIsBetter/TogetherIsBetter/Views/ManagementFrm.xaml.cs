@@ -32,10 +32,13 @@ namespace TogetherIsBetter.Views
         // reloads all companies and refreshes ListBox
         public void loadCompanies()
         {
-            Global.companies = Companies.getCompanies();
+            // load companies from db
+            Generic<Company> generic = new Generic<Company>();
+            Global.companies = generic.GetAll().ToList();
+            generic.Dispose();
 
+            // clear listbox and add companies
             lbCompanies.Items.Clear();
-
             foreach (Company company in Global.companies)
             {
                 lbCompanies.Items.Add(company.Name);
@@ -48,7 +51,6 @@ namespace TogetherIsBetter.Views
 
             int index = lbCompanies.SelectedIndex;
             saveUpdateCompany(nCompany);
-
         }
 
         private void btnEditCompany_Click(object sender, RoutedEventArgs e)
@@ -67,16 +69,19 @@ namespace TogetherIsBetter.Views
 
         private void btnDeleteCompany_Click(object sender, RoutedEventArgs e)
         {
+            // return if no selection made
             int index = lbCompanies.SelectedIndex;
             if (index == -1) return;
 
             MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this company?", "Are you sure?", MessageBoxButton.YesNo);
-
             if (result == MessageBoxResult.Yes)
             {
                 try
                 {
-                    Companies.deleteCompany(Global.companies[index]);
+                    Generic<Company> generic = new Generic<Company>();
+                    generic.Delete(Global.companies[index]);
+                    generic.Dispose();
+
                     MessageBox.Show("The company was removed successfully", "Company removed", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 catch (Exception ex)
@@ -88,8 +93,6 @@ namespace TogetherIsBetter.Views
                 // reload companies and refresh ListBox
                 loadCompanies();
             }
-
-
         }
 
         public void saveUpdateCompany(Company company)
@@ -102,7 +105,13 @@ namespace TogetherIsBetter.Views
             {
                 try
                 {
-                    Companies.saveCompany(company);
+                    Generic<Company> gen = new Generic<Company>();
+                    if (company.Id == 0)
+                        gen.Add(company);
+                    else
+                        gen.Update(company, company.Id);
+                    
+                    gen.Dispose();
                     MessageBox.Show("The company was saved successfully", "Company saved", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 catch (Exception ex)
@@ -118,20 +127,51 @@ namespace TogetherIsBetter.Views
         
         private void btnNewContract_Click(object sender, RoutedEventArgs e)
         {
-            //Contract nContract = new Contract();
+            Contract nContract = new Contract();
 
-            //int index = lbContract.SelectedIndex;
-            //saveUpdateContract(nContract);
-
+            int index = lbContracts.SelectedIndex;
+            saveUpdateContract(nContract);
         }
 
         private void btnEditContract_Click(object sender, RoutedEventArgs e)
         {
-            //int index = lbContract.SelectedIndex;
-            //if (index == -1) return;
+            int index = lbContracts.SelectedIndex;
+            if (index == -1) return;
 
-            //saveUpdateContract(Global.Contract[index]);
+            saveUpdateContract(Global.contracts[index]);
         }
+
+        private void saveUpdateContract(Contract contract)
+        {
+            ContractFrm cFrm = new ContractFrm(contract);
+            bool result = (bool)cFrm.ShowDialog();
+            cFrm.Close();
+
+            if (result)
+            {
+                try
+                {
+                    Generic<Contract> gen = new Generic<Contract>();
+                    if (contract.Id == 0)
+                        gen.Add(contract);
+                    else
+                        gen.Update(contract, contract.Id);
+
+                    gen.Dispose();
+                    MessageBox.Show("The contract was saved successfully", "Contract saved", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    Console.Write(ex.ToString());
+                    MessageBox.Show("There was a problem saving this company to the database. Please try again later or contact a sysadmin.", "Database Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+
+                // reload companies and refresh ListBox
+                loadCompanies();
+            }
+        }
+
+        
 
         private void btnDeleteContract_Click(object sender, RoutedEventArgs e)
         {
@@ -168,10 +208,12 @@ namespace TogetherIsBetter.Views
 
         private void loadContracts()
         {
-            Global.contracts = Contracts.getContracts();
+            // load companies from db
+            Generic<Contract> generic = new Generic<Contract>();
+            Global.contracts = generic.GetAll().ToList();
+            generic.Dispose();
 
             lbContracts.Items.Clear();
-
             foreach (Contract contract in Global.contracts)
             {
                 lbContracts.Items.Add(String.Format("{0} \t({1:dd/MM/yy} - {2:dd/MM/yy})", Global.companies.Find(c => c.Id == contract.CompanyId).Name, contract.StartDate, contract.EndDate));
@@ -180,10 +222,12 @@ namespace TogetherIsBetter.Views
 
         private void loadContractFormula()
         {
-            Global.contractFormula = Contracts.getContractForumla();
+            // load companies from db
+            Generic<ContractFormula> generic = new Generic<ContractFormula>();
+            Global.contractFormula = generic.GetAll().ToList();
+            generic.Dispose();
 
             lbContractFormula.Items.Clear();
-
             foreach (ContractFormula contractFormula in Global.contractFormula)
             {
                 lbContractFormula.Items.Add(String.Format("{0}", contractFormula.Description));
@@ -192,6 +236,16 @@ namespace TogetherIsBetter.Views
 
         private void lbContractFormula_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+        }
+
+        private void lbContracts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            int index = lbContracts.SelectedIndex;
+            if (index == -1) return;
+
+            saveUpdateContract(Global.contracts[index]);
+
 
         }
 

@@ -47,7 +47,7 @@
                     </Grid.RowDefinitions>
 
                     <Label Grid.Row="0" Content="All contracts" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top" Height="26" Width="87"/>
-                    <ListBox x:Name="lbContracts" Grid.Row="1" Margin="10,0" Grid.RowSpan="1"/>
+                    <ListBox x:Name="lbContracts" Grid.Row="1" Margin="10,0" Grid.RowSpan="1" MouseDoubleClick="lbContracts_MouseDoubleClick"/>
 
 
                     <StackPanel Grid.Row="3" Margin="0,2,10,10" MinHeight="40" Width="231" HorizontalAlignment="Right" Orientation="Horizontal">
