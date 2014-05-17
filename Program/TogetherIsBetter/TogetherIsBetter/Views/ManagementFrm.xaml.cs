@@ -20,7 +20,7 @@ namespace TogetherIsBetter.Views
     /// </summary>
     public partial class ManagementFrm : Window
     {
-
+        private bool showAllContracts = false;
         public ManagementFrm()
         {
             InitializeComponent();
@@ -95,6 +95,7 @@ namespace TogetherIsBetter.Views
             }
         }
 
+  
         public void saveUpdateCompany(Company company)
         {
             CompanyFrm cFrm = new CompanyFrm(company);
@@ -129,16 +130,18 @@ namespace TogetherIsBetter.Views
         {
             Contract nContract = new Contract();
 
-            int index = lbContracts.SelectedIndex;
+            int index = lvContracts.SelectedIndex;
             saveUpdateContract(nContract);
+            loadContracts();
         }
 
         private void btnEditContract_Click(object sender, RoutedEventArgs e)
         {
-            int index = lbContracts.SelectedIndex;
+            int index = lvContracts.SelectedIndex;
             if (index == -1) return;
 
             saveUpdateContract(Global.contracts[index]);
+            loadContracts();
         }
 
         private void saveUpdateContract(Contract contract)
@@ -178,7 +181,7 @@ namespace TogetherIsBetter.Views
 
         }
 
-        private void lbContracts_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void lvContracts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //int index = lbCompanies.SelectedIndex;
         }
@@ -213,10 +216,20 @@ namespace TogetherIsBetter.Views
             Global.contracts = generic.GetAll().ToList();
             generic.Dispose();
 
-            lbContracts.Items.Clear();
+            lvContracts.Items.Clear();
             foreach (Contract contract in Global.contracts)
             {
-                lbContracts.Items.Add(String.Format("{0} \t({1:dd/MM/yy} - {2:dd/MM/yy})", Global.companies.Find(c => c.Id == contract.CompanyId).Name, contract.StartDate, contract.EndDate));
+                if (showAllContracts)
+                {
+                    lvContracts.Items.Add(contract);   
+                }
+                else
+                {
+                    int res = ((DateTime)contract.EndDate).CompareTo(DateTime.Today);
+                    if (res >= 0)
+                        lvContracts.Items.Add(contract);
+                }
+                
             }
         }
 
@@ -239,14 +252,28 @@ namespace TogetherIsBetter.Views
 
         }
 
-        private void lbContracts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+
+        private void lvContracts_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
         {
-            int index = lbContracts.SelectedIndex;
+            int index = lvContracts.SelectedIndex;
             if (index == -1) return;
 
             saveUpdateContract(Global.contracts[index]);
+        }
 
+        private void cboxShowAllContracts_Checked(object sender, RoutedEventArgs e)
+        {
+            lblContracts.Content = "All contracts";
+            showAllContracts = true;
+            loadContracts();
+        }
 
+        private void cboxShowAllContracts_Unchecked(object sender, RoutedEventArgs e)
+        {
+            lblContracts.Content = "Active contracts";
+            showAllContracts = false;
+            loadContracts();
+            
         }
 
 

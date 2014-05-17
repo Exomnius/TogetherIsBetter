@@ -14,6 +14,7 @@ namespace TogetherIsBetter
 
 using System;
     using System.Collections.Generic;
+    using TogetherIsBetter.Model;
     
 public partial class Contract
 {
@@ -30,7 +31,12 @@ public partial class Contract
 
     public Nullable<int> ContractFormulaId { get; set; }
 
-
+    public String CompanyName
+    {
+        get {
+            return Global.companies.Find(c => c.Id == this.CompanyId).Name;
+        }
+    }
 
     public virtual Company Company { get; set; }
 
