@@ -18,20 +18,21 @@ namespace TogetherIsBetter
         {
             User user = new User();
 
-            user.Role = "admin";
-            user.Username = "admin";
-            //user.Role = "user";
-            //user.Username = "user";
-            bool result = true;
+            //user.Role = "admin";
+            //user.Username = "admin";
+            ////user.Role = "user";
+            ////user.Username = "user";
+            //bool result = true;
 
-            //LoginForm loginFrm = new LoginForm(user);
-            //bool result = (bool)loginFrm.ShowDialog();            
+            LoginForm loginFrm = new LoginForm(user);
+            bool result = (bool)loginFrm.ShowDialog();            
 
             if (result)
             {
                 // init global vars
                 Global.companies = Companies.getCompanies();
                 
+
                 // show main window
                 MainWindow appmainwindow = new MainWindow(user);
                 Application.Current.MainWindow = appmainwindow;

@@ -73,6 +73,15 @@ namespace TogetherIsBetter.Views
             int index = lbCompanies.SelectedIndex;
             if (index == -1) return;
 
+            Company company = Global.companies[index];
+
+            // check for existing contracts
+            if (Global.contracts.Find(contract => contract.CompanyId == company.Id) != null)
+            {
+                MessageBox.Show("You can't delete this company because it has 1 or more existing contracts.", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
             MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this company?", "Are you sure?", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
@@ -305,6 +314,7 @@ namespace TogetherIsBetter.Views
 
             Contract contract = (Contract)lvContracts.SelectedItem;
             saveUpdateContract(Global.contracts.Find(c => c.Id == contract.Id));
+            loadContracts();
         }
 
         private void cboxShowAllContracts_Checked(object sender, RoutedEventArgs e)
@@ -356,6 +366,56 @@ namespace TogetherIsBetter.Views
             if (index == -1) return;
 
             saveUpdateFormula(Global.contractFormula[index]);
+        }
+
+        private void btnStopContract_Click(object sender, RoutedEventArgs e)
+        {
+            if (lvContracts.SelectedIndex == -1)
+                return;
+
+            Contract contract = (Contract)lvContracts.SelectedItem;
+            ContractFormula formula = Global.contractFormula.Find(f => f.Id == contract.ContractFormulaId);
+            int? monthsNotice = formula.NoticePeriodInMonths;
+            DateTime endDate = (DateTime)contract.EndDate;
+           
+            if (monthsNotice == null)
+            {
+                if (endDate < DateTime.Today)
+                {
+                    MessageBox.Show("This contract has already endend", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return;
+                }
+            }
+            else if (DateTime.Today.AddMonths((int)monthsNotice) < endDate)
+            {
+                MessageBox.Show(String.Format("This contract can't be stopped. The contract formula requires a {0} month notice and this contract ends {1:dd-mm-yy}. ", (int)monthsNotice, endDate), "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
+            if (monthsNotice == null)
+            {
+                contract.EndDate = DateTime.Today.AddDays(-1);
+            }
+            else
+            {
+                contract.EndDate = DateTime.Today.AddMonths((int)monthsNotice);
+            }
+            
+
+            try
+            {
+                Generic<Contract> gen = new Generic<Contract>();
+                gen.Update(contract, contract.Id);
+                gen.Dispose();
+                MessageBox.Show("The contract has been stopped successfully", "Contract saved", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.ToString());
+                MessageBox.Show("There was a problem stopping this contract. Please try again later or contact a sysadmin.", "Database Error", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+            loadContracts();
         }
 
 

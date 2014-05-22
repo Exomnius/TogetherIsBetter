@@ -1,0 +1,50 @@
+﻿<Window x:Class="TogetherIsBetter.Views.ProfileManagementAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Profile Management" Height="291.429" Width="290.204">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="41*"/>
+            <RowDefinition Height="33"/>
+            <RowDefinition Height="107*"/>
+            <RowDefinition Height="49"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lblContracts" Grid.Row="0" Content="Company" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top" Height="26" Width="164"/>
+        </Grid>
+
+
+        <StackPanel Grid.Row="4" Margin="0,0,10,0" MinHeight="40" Width="233" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button x:Name="btnNewUser" Margin="5" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1" Click="btnNewContract_Click">
+                <DockPanel>
+                    <Image Source="../images/add.png" Height="15" Margin="0,0,5,0"/>
+                    <TextBlock VerticalAlignment="center">New</TextBlock>
+                </DockPanel>
+            </Button>
+            <Button x:Name="btnEditUser" Margin="5" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1" Click="btnEditContract_Click">
+                <DockPanel>
+                    <Image Source="../images/edit.png" Height="15" Margin="0,0,5,0"/>
+                    <TextBlock VerticalAlignment="center">Edit</TextBlock>
+                </DockPanel>
+            </Button>
+            <Button x:Name="btnDeleteUser" Margin="5" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1" Click="btnDeleteContract_Click">
+                <DockPanel>
+                    <Image Source="../images/remove.png" Height="15" Margin="0,0,5,0"/>
+                    <TextBlock VerticalAlignment="center">Delete</TextBlock>
+                </DockPanel>
+            </Button>
+        </StackPanel>
+        <ListBox x:Name="lbUsers" HorizontalAlignment="Left" Height="96" Margin="7,3,0,0" Grid.Row="3" VerticalAlignment="Top" Width="265"/>
+        <ComboBox x:Name="cboCompany" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="262" Height="22"/>
+        <Label x:Name="lblContracts_Copy" Grid.Row="2" Content="Users" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Height="26" Width="164"/>
+    </Grid>
+</Window>

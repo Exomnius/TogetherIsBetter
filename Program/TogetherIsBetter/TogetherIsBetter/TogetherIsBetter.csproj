@@ -143,6 +143,9 @@
     <Compile Include="Views\LoginFrm.xaml.cs">
       <DependentUpon>LoginFrm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ProfileManagementAdmin.xaml.cs">
+      <DependentUpon>ProfileManagementAdmin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RegisterFrm.xaml.cs">
       <DependentUpon>RegisterFrm.xaml</DependentUpon>
     </Compile>
@@ -184,6 +187,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\LoginFrm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProfileManagementAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -283,6 +290,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\stop.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

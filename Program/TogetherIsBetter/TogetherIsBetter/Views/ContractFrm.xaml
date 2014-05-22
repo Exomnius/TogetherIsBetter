@@ -1,7 +1,7 @@
 ﻿<Window x:Name="Contract" x:Class="TogetherIsBetter.Views.ContractFrm"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="ContractFrm" Height="233" Width="348" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Contract" Height="233" Width="348" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>

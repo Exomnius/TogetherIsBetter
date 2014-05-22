@@ -93,6 +93,11 @@ namespace TogetherIsBetter
             contractFrm.Show();
         }
 
+        private void btnProfile_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
 
   
         

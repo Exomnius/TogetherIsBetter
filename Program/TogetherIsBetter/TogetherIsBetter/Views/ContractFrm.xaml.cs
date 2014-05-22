@@ -110,12 +110,20 @@ namespace TogetherIsBetter.Views
                 return;
             }
 
+            // check for overlapping contracts
+            foreach (Contract c in Global.contracts)
+                if (c.CompanyId == Global.companies[companyIndex].Id && startDate <= c.EndDate)
+                {
+                    MessageBoxResult result = MessageBox.Show("There is another contract that overlaps with this one. Do you want to continue?", "Overlapping contract", MessageBoxButton.YesNo, MessageBoxImage.Information);
+                    if (result == MessageBoxResult.No)
+                        return;
+                }
+
             this.contract.Number = Int32.Parse(number);
             this.contract.StartDate = startDate;
             this.contract.EndDate = endDate;
             this.contract.CompanyId = Global.companies[companyIndex].Id;
             this.contract.ContractFormulaId = Global.contractFormula[formulaIndex].Id; 
-
 
             this.DialogResult = true;
             this.Hide();
