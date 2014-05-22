@@ -1,7 +1,7 @@
 ﻿<Window x:Class="TogetherIsBetter.Views.ManagementFrm"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="ContractManagementFrm" Height="316" Width="361" MinHeight="200" MinWidth="260">
+        Title="ContractManagementFrm" Height="316" Width="361" MinHeight="200" MinWidth="260" WindowStartupLocation="CenterScreen">
     <Grid>
         <TabControl>
             <TabItem Header="Companies">
@@ -54,7 +54,7 @@
                             <ColumnDefinition Width="2*"/>
                             <ColumnDefinition Width="2*"/>
                         </Grid.ColumnDefinitions>
-                        <Label x:Name="lblContracts" Grid.Row="0" Content="Active contracts" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top" Height="26" Width="105"/>
+                        <Label x:Name="lblContracts" Grid.Row="0" Content="Showing: active contracts" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top" Height="26" Width="164"/>
                         <CheckBox x:Name="cboxShowAllContracts" Content="Show all contracts" Grid.Column="1" Margin="0,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="116" Checked="cboxShowAllContracts_Checked" Unchecked="cboxShowAllContracts_Unchecked"/>
                     </Grid>
 

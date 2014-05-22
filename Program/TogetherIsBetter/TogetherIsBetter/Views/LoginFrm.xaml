@@ -1,7 +1,7 @@
 ﻿<Window x:Name="Login" x:Class="TogetherIsBetter.LoginForm"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Login" Height="343" Width="462" Closing="Login_Closing">
+        Title="Login" Height="343" Width="462" Closing="Login_Closing" WindowStartupLocation="CenterScreen">
     <Grid x:Name="Login1">
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"/>

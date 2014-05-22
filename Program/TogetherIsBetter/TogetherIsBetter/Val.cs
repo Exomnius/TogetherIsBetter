@@ -16,6 +16,21 @@ namespace TogetherIsBetter
             return number == 0 ? false : true;
         }
 
+        public static bool isDecimal(String input)
+        {
+            try
+            {
+                if (input == "")
+                    return true;
+
+                double result = Double.Parse(input);
+                return true;
+            }
+            catch(FormatException){
+                return false;
+            }
+        }
+
         public static bool isEmpty(String input)
         {
             return input.Equals("") ? true : false;   

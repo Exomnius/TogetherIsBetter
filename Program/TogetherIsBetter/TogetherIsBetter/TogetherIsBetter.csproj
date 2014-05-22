@@ -131,6 +131,9 @@
     <Compile Include="Views\CompanyFrm.xaml.cs">
       <DependentUpon>CompanyFrm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ContractFormulaFrm.xaml.cs">
+      <DependentUpon>ContractFormulaFrm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ContractFrm.xaml.cs">
       <DependentUpon>ContractFrm.xaml</DependentUpon>
     </Compile>
@@ -165,6 +168,10 @@
       <DependentUpon>TIB_Model.edmx</DependentUpon>
     </Compile>
     <Page Include="Views\CompanyFrm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ContractFormulaFrm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

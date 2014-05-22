@@ -129,18 +129,17 @@ namespace TogetherIsBetter.Views
         private void btnNewContract_Click(object sender, RoutedEventArgs e)
         {
             Contract nContract = new Contract();
-
-            int index = lvContracts.SelectedIndex;
             saveUpdateContract(nContract);
             loadContracts();
         }
 
         private void btnEditContract_Click(object sender, RoutedEventArgs e)
         {
-            int index = lvContracts.SelectedIndex;
-            if (index == -1) return;
+            if (lvContracts.SelectedIndex == -1)
+                return;
 
-            saveUpdateContract(Global.contracts[index]);
+            Contract contract = (Contract)lvContracts.SelectedItem;
+            saveUpdateContract(Global.contracts.Find(c => c.Id == contract.Id));
             loadContracts();
         }
 
@@ -178,7 +177,29 @@ namespace TogetherIsBetter.Views
 
         private void btnDeleteContract_Click(object sender, RoutedEventArgs e)
         {
+            // return if no selection made
+            int index = lvContracts.SelectedIndex;
+            if (index == -1) return;
 
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this contract?", "Are you sure?", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    Generic<Contract> generic = new Generic<Contract>();
+                    generic.Delete(Global.contracts[index]);
+                    generic.Dispose();
+
+                    MessageBox.Show("The contract was removed successfully", "Contract removed", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    Console.Write(ex.ToString());
+                    MessageBox.Show("There was a problem removing this contract from the database. Please try again later or contact a sysadmin.", "Database Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+
+                loadContracts();
+            }
         }
 
         private void lvContracts_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -188,23 +209,47 @@ namespace TogetherIsBetter.Views
 
         private void btnNewFormula_Click(object sender, RoutedEventArgs e)
         {
-            //Formula nFormula = new Formula();
+            ContractFormula nFormula = new ContractFormula();
 
-            //int index = lbFormula.SelectedIndex;
-            //saveUpdateFormula(nFormula);
+            int index = lbContractFormula.SelectedIndex;
+            saveUpdateFormula(nFormula);
+            loadContractFormula();
         }
 
         private void btnEditFormula_Click(object sender, RoutedEventArgs e)
         {
-            //int index = lbFormula.SelectedIndex;
-            //if (index == -1) return;
+            int index = lbContractFormula.SelectedIndex;
+            if (index == -1) return;
 
-            //saveUpdateFormula(Global.Formula[index]);
+            saveUpdateFormula(Global.contractFormula[index]);
+            loadContractFormula();
         }
 
         private void btnDeleteFormula_Click(object sender, RoutedEventArgs e)
         {
+            // return if no selection made
+            int index = lbContractFormula.SelectedIndex;
+            if (index == -1) return;
 
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this contract formula?", "Are you sure?", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    Generic<ContractFormula> generic = new Generic<ContractFormula>();
+                    generic.Delete(Global.contractFormula[index]);
+                    generic.Dispose();
+
+                    MessageBox.Show("The contract formula was removed successfully", "Company removed", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    Console.Write(ex.ToString());
+                    MessageBox.Show("There was a problem removing this contract formula from the database. Please try again later or contact a sysadmin.", "Database Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+
+                loadContractFormula();
+            }
         }
 
         
@@ -255,27 +300,55 @@ namespace TogetherIsBetter.Views
 
         private void lvContracts_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
         {
-            int index = lvContracts.SelectedIndex;
-            if (index == -1) return;
+            if (lvContracts.SelectedIndex == -1)
+                return;
 
-            saveUpdateContract(Global.contracts[index]);
+            Contract contract = (Contract)lvContracts.SelectedItem;
+            saveUpdateContract(Global.contracts.Find(c => c.Id == contract.Id));
         }
 
         private void cboxShowAllContracts_Checked(object sender, RoutedEventArgs e)
         {
-            lblContracts.Content = "All contracts";
+            lblContracts.Content = "Showing: all contracts";
             showAllContracts = true;
             loadContracts();
         }
 
         private void cboxShowAllContracts_Unchecked(object sender, RoutedEventArgs e)
         {
-            lblContracts.Content = "Active contracts";
+            lblContracts.Content = "Showing: active contracts";
             showAllContracts = false;
             loadContracts();
             
         }
 
+
+        public void saveUpdateFormula(ContractFormula contractFormula)
+        {
+            ContractFormulaFrm cFrm = new ContractFormulaFrm(contractFormula);
+            bool result = (bool)cFrm.ShowDialog();
+            cFrm.Close();
+
+            if (result)
+            {
+                try
+                {
+                    Generic<ContractFormula> gen = new Generic<ContractFormula>();
+                    if (contractFormula.Id == 0)
+                        gen.Add(contractFormula);
+                    else
+                        gen.Update(contractFormula, contractFormula.Id);
+
+                    gen.Dispose();
+                    MessageBox.Show("The contract formula was saved successfully", "Contract formula saved", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    Console.Write(ex.ToString());
+                    MessageBox.Show("There was a problem saving this contract formula to the database. Please try again later or contact a sysadmin.", "Database Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+        }
 
 
 
