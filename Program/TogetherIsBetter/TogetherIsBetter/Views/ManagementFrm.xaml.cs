@@ -350,6 +350,14 @@ namespace TogetherIsBetter.Views
             }
         }
 
+        private void lbContractFormula_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            int index = lbContractFormula.SelectedIndex;
+            if (index == -1) return;
+
+            saveUpdateFormula(Global.contractFormula[index]);
+        }
+
 
 
 

@@ -45,35 +45,45 @@ namespace TogetherIsBetter.Views
             String noticePeriodInMonths = tboNoticePeriodInMonths.Text.Trim();
             String periodInMonths = tboPeriodInMonths.Text.Trim();
             String price = tboPrice.Text.Trim();
+            int maxHoursPerPeriodNum, noticePeriodInMonthsNum, periodInMonthsNum;
+            decimal priceNum;
 
             if (Val.isEmpty(description))
             {
-                error = "Description can't be empty. \n";
+                error += "Description can't be empty. \n";
             }
 
             if (Val.isLongerThan(description, 50))
             {
-                error = "Description can't be longer than 50 charachters. \n";
+                error += "Description can't be longer than 50 charachters. \n";
             }
 
             if (!Val.isDecimal(maxHoursPerPeriod))
             {
-                error = "Max hours per period must be a number. \n";
+                error += "Max hours per period must be a number. \n";
             }
 
             if (!Val.isDecimal(noticePeriodInMonths))
             {
-                error = "Notice period in months must be a number. \n";
+                error += "Notice period in months must be a number. \n";
             }
 
-            if (!Val.isDecimal(periodInMonths))
+            if (Val.isEmpty(periodInMonths))
             {
-                error = "Period in months must be a number. \n";
+                error += "Period in months can't be empty. \n";
+            }
+            else if (!Val.isDecimal(periodInMonths))
+            {
+                error += "Period in months must be a number. \n";
             }
 
-            if (!Val.isDecimal(price))
+            if (Val.isEmpty(price))
             {
-                error = "Price must be a number. \n";
+                error += "Price can't be empty. \n";
+            }
+            else if (!Val.isDecimal(price))
+            {
+                error += "Price must be a number. \n";
             }
 
             if (error != "")
@@ -82,6 +92,17 @@ namespace TogetherIsBetter.Views
                 MessageBox.Show(error, "Incorrect input", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+
+            Int32.TryParse(maxHoursPerPeriod, out maxHoursPerPeriodNum);
+            Int32.TryParse(noticePeriodInMonths, out noticePeriodInMonthsNum);
+            Int32.TryParse(periodInMonths, out periodInMonthsNum);
+            Decimal.TryParse(price, out priceNum);
+
+            contractFormula.Description = description;
+            contractFormula.MaxUsageHoursPerPeriod = maxHoursPerPeriodNum;
+            contractFormula.NoticePeriodInMonths = noticePeriodInMonthsNum;
+            contractFormula.PeriodInMonths = periodInMonthsNum;
+            contractFormula.Price = priceNum;
 
             this.DialogResult = true;
             this.Hide();

@@ -22,17 +22,29 @@ namespace TogetherIsBetter.Views
     {
 
         public Contract contract;
+        private bool isNewContract;
 
         public ContractFrm(Contract contract)
         {
             InitializeComponent();
             this.contract = contract;
-            
+
+            // this is a new contract
+            if (contract.Id == 0)
+            {
+                isNewContract = true;
+                // preselect start date
+                dateStart.SelectedDate = DateTime.Today;
+            }
+            else
+            {
+                dateStart.SelectedDate = contract.StartDate;
+                dateEnd.SelectedDate = contract.EndDate;
+            }
+
             // set initial values
             if (contract.Number != 0)
                 tboNumber.Text = contract.Number.ToString();
-            dateStart.SelectedDate = contract.StartDate;
-            dateEnd.SelectedDate = contract.EndDate;
 
             // set combobox binding
             cboCompany.ItemsSource = Global.companies;
@@ -113,6 +125,18 @@ namespace TogetherIsBetter.Views
         {
             this.DialogResult = false;
             this.Hide();
+        }
+
+        private void cboContractFormula_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (isNewContract)
+            {
+                ContractFormula formula = (ContractFormula)cboContractFormula.SelectedItem;
+
+                int numMonths = (int)formula.PeriodInMonths;
+                dateEnd.SelectedDate = DateTime.Today.AddMonths(numMonths);
+            }
+                
         }
     }
 }
