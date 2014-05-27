@@ -438,5 +438,14 @@
       <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
       <End Role="aspnet_Users" EntitySet="aspnet_Users" />
     </AssociationSet>
+    <EntitySet Name="UsersPerCompany" EntityType="Model.UsersPerCompany" />
   </EntityContainer>
+  <EntityType Name="UsersPerCompany">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="CompanyId" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+  </EntityType>
 </Schema>

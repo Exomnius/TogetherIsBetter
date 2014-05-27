@@ -45,6 +45,7 @@ namespace TogetherIsBetter
                 apt.AppointmentID = i;
                 apt.StartTime = reservations[i].StartDate;
                 apt.EndTime = reservations[i].EndDate;
+                
                 apt.Subject = Global.companies.Find(c => c.Id == reservations[i].CompanyId).Name;
                 _myAppointmentsList.Add(apt);
             }
@@ -95,7 +96,9 @@ namespace TogetherIsBetter
 
         private void btnProfile_Click(object sender, RoutedEventArgs e)
         {
-            
+
+            ProfileAdminFrm form = new ProfileAdminFrm();
+            form.ShowDialog();
         }
 
 

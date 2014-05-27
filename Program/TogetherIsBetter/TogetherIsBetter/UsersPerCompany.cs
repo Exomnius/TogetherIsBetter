@@ -15,26 +15,12 @@ namespace TogetherIsBetter
 using System;
     using System.Collections.Generic;
     
-public partial class Contract
+public partial class UsersPerCompany
 {
 
-    public int Id { get; set; }
+    public System.Guid UserId { get; set; }
 
-    public int Number { get; set; }
-
-    public Nullable<System.DateTime> StartDate { get; set; }
-
-    public Nullable<System.DateTime> EndDate { get; set; }
-
-    public Nullable<int> CompanyId { get; set; }
-
-    public Nullable<int> ContractFormulaId { get; set; }
-
-
-
-    public virtual Company Company { get; set; }
-
-    public virtual ContractFormula ContractFormula { get; set; }
+    public int CompanyId { get; set; }
 
 }
 

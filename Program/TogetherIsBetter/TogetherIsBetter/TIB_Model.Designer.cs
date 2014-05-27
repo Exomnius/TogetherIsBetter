@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'd:\Users\Ik\Desktop\TogetherIsBetter-Nick\Program\TogetherIsBetter\TogetherIsBetter\TIB_Model.edmx'. 
+﻿// T4 code generation is enabled for model 'd:\Users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\TIB_Model.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f2e40029c786470fa684afded05a42ed" Name="Diagram1">
+      <Diagram DiagramId="f2e40029c786470fa684afded05a42ed" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="Model.aspnet_Applications" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.aspnet_Membership" Width="1.5" PointX="6" PointY="11.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.aspnet_Paths" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
@@ -16,7 +16,7 @@
         <EntityTypeShape EntityType="Model.aspnet_Users" Width="1.5" PointX="8.25" PointY="13.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.aspnet_WebEvent_Events" Width="1.5" PointX="2.75" PointY="11.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Company" Width="1.5" PointX="7.75" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Contract" Width="1.5" PointX="10" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Contract" Width="1.5" PointX="10" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.ContractFormula" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Location" Width="1.5" PointX="10.75" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Reservation" Width="1.5" PointX="13" PointY="4.5" IsExpanded="true" />
@@ -34,6 +34,7 @@
         <AssociationConnector Association="Model.fk_ContForm" ManuallyRouted="false" />
         <AssociationConnector Association="Model.fk_ResLoc" ManuallyRouted="false" />
         <AssociationConnector Association="Model.aspnet_UsersInRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.UsersPerCompany" Width="1.5" PointX="4.5" PointY="1.25" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

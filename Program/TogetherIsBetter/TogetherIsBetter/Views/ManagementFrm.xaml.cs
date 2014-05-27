@@ -265,7 +265,6 @@ namespace TogetherIsBetter.Views
 
         private void loadContracts()
         {
-            // load companies from db
             Generic<Contract> generic = new Generic<Contract>();
             Global.contracts = generic.GetAll().ToList();
             generic.Dispose();

@@ -127,6 +127,9 @@
     <Compile Include="Model\Generic.cs" />
     <Compile Include="Model\Global.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UsersPerCompany.cs">
+      <DependentUpon>TIB_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Val.cs" />
     <Compile Include="Views\CompanyFrm.xaml.cs">
       <DependentUpon>CompanyFrm.xaml</DependentUpon>
@@ -143,11 +146,11 @@
     <Compile Include="Views\LoginFrm.xaml.cs">
       <DependentUpon>LoginFrm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ProfileManagementAdmin.xaml.cs">
-      <DependentUpon>ProfileManagementAdmin.xaml</DependentUpon>
+    <Compile Include="Views\ProfileAdminFrm.xaml.cs">
+      <DependentUpon>ProfileAdminFrm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\RegisterFrm.xaml.cs">
-      <DependentUpon>RegisterFrm.xaml</DependentUpon>
+    <Compile Include="Views\ProfileFrm.xaml.cs">
+      <DependentUpon>ProfileFrm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Location.cs">
       <DependentUpon>TIB_Model.tt</DependentUpon>
@@ -190,11 +193,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ProfileManagementAdmin.xaml">
+    <Page Include="Views\ProfileAdminFrm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\RegisterFrm.xaml">
+    <Page Include="Views\ProfileFrm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -62,6 +62,8 @@ public partial class TIB_Model : DbContext
 
     public virtual DbSet<Reservation> Reservation { get; set; }
 
+    public virtual DbSet<UsersPerCompany> UsersPerCompany { get; set; }
+
 }
 
 }

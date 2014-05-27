@@ -15,6 +15,7 @@ namespace TogetherIsBetter.Model
         public Generic()
         {
             _context = new TIB_Model();
+            //_context.Configuration.LazyLoadingEnabled = true;
         }
 
         public ICollection<TEntity> GetAll()
@@ -59,6 +60,19 @@ namespace TogetherIsBetter.Model
             }
             return existing;
         }
+        //public TEntity Update(TEntity updated, Guid key, int key2)
+        //{
+        //    if (updated == null)
+        //        return null;
+
+        //    TEntity existing = _context.Set<TEntity>().Find(key, key2);
+        //    if (existing != null)
+        //    {
+        //        _context.Entry(existing).CurrentValues.SetValues(updated);
+        //        _context.SaveChanges();
+        //    }
+        //    return existing;
+        //}
 
         public void Delete(TEntity t)
         {
