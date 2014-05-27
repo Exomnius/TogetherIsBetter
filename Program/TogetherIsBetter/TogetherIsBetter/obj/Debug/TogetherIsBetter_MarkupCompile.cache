@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-d:\Users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\
+E:\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\
 TogetherIsBetter
 none
 false
 DEBUG;TRACE
-d:\Users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\App.xaml
-7-1670743935
+E:\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\App.xaml
+8965540620
 
-3542536063
-201989927703
-Views\CompanyFrm.xaml;Views\ContractFormulaFrm.xaml;Views\ContractFrm.xaml;Views\ManagementFrm.xaml;Views\LoginFrm.xaml;Views\RegisterFrm.xaml;MainWindow.xaml;
+36297686943
+26-1928980551
+Views\CompanyFrm.xaml;Views\ReservationFrm.xaml;Views\ContractFormulaFrm.xaml;Views\ContractFrm.xaml;Views\ManagementFrm.xaml;Views\LoginFrm.xaml;Views\RegisterFrm.xaml;MainWindow.xaml;
 
 False
 

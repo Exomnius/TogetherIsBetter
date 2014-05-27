@@ -70,7 +70,7 @@ namespace TogetherIsBetter
 
                 if (!Roles.RoleExists("admin"))
                     Roles.CreateRole("admin");
-                if (Roles.IsUserInRole("admin", "admin"))
+                if (!Roles.IsUserInRole("admin", "admin"))
                     Roles.AddUserToRole("admin", "admin");
             }
 
@@ -82,7 +82,7 @@ namespace TogetherIsBetter
 
                 if (!Roles.RoleExists("user"))
                     Roles.CreateRole("user");
-                if (Roles.IsUserInRole("user", "user"))
+                if (!Roles.IsUserInRole("user", "user"))
                     Roles.AddUserToRole("user", "user");
             } 
         }
