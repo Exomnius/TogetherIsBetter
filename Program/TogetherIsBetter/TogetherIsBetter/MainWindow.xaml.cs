@@ -42,7 +42,9 @@ namespace TogetherIsBetter
 
         private void loadCalendar()
         {
-            List<Reservation> reservations = Companies.getReservations();
+            Generic<Reservation> gen = new Generic<Reservation>();
+            List<Reservation> reservations = gen.GetAll().ToList();
+            gen.Dispose();
 
             for (int i = 0; i < reservations.Count; i++)
             {

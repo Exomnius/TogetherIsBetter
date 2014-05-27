@@ -140,8 +140,6 @@
     <Compile Include="ContractFormula.cs">
       <DependentUpon>TIB_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Companies.cs" />
-    <Compile Include="Model\Contracts.cs" />
     <Compile Include="Model\Generic.cs" />
     <Compile Include="Model\Global.cs" />
     <Compile Include="User.cs" />
