@@ -37,12 +37,17 @@ namespace TogetherIsBetter
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            loadCalendar();
+        }
+
+        private void loadCalendar()
+        {
             List<Reservation> reservations = Companies.getReservations();
 
             for (int i = 0; i < reservations.Count; i++)
             {
                 Appointment apt = new Appointment();
-                apt.AppointmentID = i;
+                apt.AppointmentID = reservations[i].Id;
                 apt.StartTime = reservations[i].StartDate;
                 apt.EndTime = reservations[i].EndDate;
                 
@@ -51,17 +56,72 @@ namespace TogetherIsBetter
             }
 
             SetAppointments();
-            
         }
 
         private void DayBoxDoubleClicked_event(NewAppointmentEventArgs e)
         {
-            MessageBox.Show("You double-clicked on day " + Convert.ToDateTime(e.StartDate).ToShortDateString(), "Calendar Event", MessageBoxButton.OK);
+            //MessageBox.Show("You double-clicked on day " + Convert.ToDateTime(e.StartDate).ToShortDateString(), "Calendar Event", MessageBoxButton.OK);
+            Reservation reservation = new Reservation();
+            reservation.StartDate = Convert.ToDateTime(e.StartDate).Date + DateTime.Now.TimeOfDay;
+            reservation.EndDate = Convert.ToDateTime(e.StartDate).Date + DateTime.Now.TimeOfDay;
+
+            ReservationFrm reservationFrm = new ReservationFrm(reservation);
+            bool result = (bool)reservationFrm.ShowDialog();
+
+            if (result)
+            {
+                try
+                {
+                    Generic<Reservation> gen = new Generic<Reservation>();
+                    if (reservation.Id == 0)
+                        gen.Add(reservation);
+                    else
+                        gen.Update(reservation, reservation.Id);
+                    
+                    gen.Dispose();
+                    MessageBox.Show("The reservation was saved successfully", "Reservation saved", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    Console.Write(ex.ToString());
+                    MessageBox.Show("There was a problem saving this Reservation to the database. Please try again later or contact a sysadmin.", "Database Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+
+                // reload companies and refresh ListBox
+                _myAppointmentsList.Clear();
+                loadCalendar();
+            }
+
+        }
+
+        private void loadReservations()
+        {
+            Generic<Reservation> generic = new Generic<Reservation>();
+            Global.reservations = generic.GetAll().ToList();
+            generic.Dispose();
+        }
+
+        private void loadLocations()
+        {
+            Generic<Location> generic = new Generic<Location>();
+            Global.locations = generic.GetAll().ToList();
+            generic.Dispose();
         }
 
         private void AppointmentDblClicked(int Appointment_Id)
         {
-            MessageBox.Show("You double-clicked on appointment with ID = " + Appointment_Id, "Calendar Event", MessageBoxButton.OK);
+            //MessageBox.Show("You double-clicked on appointment with ID = " + Appointment_Id, "Calendar Event", MessageBoxButton.OK);
+
+            //load reservations + locations
+            loadReservations();
+            loadLocations();
+
+            //when clicked on a reservation
+            Reservation reservation = Global.reservations.Find(r => r.Id == Appointment_Id);
+            reservation.Location = Global.locations.Find(l => l.Id == reservation.LocationId);
+
+            ReservationFrm reservationFrm = new ReservationFrm(reservation);
+            bool result = (bool)reservationFrm.ShowDialog();
         }
 
         private void DisplayMonthChanged(MonthChangedEventArgs e)

@@ -16,16 +16,16 @@ namespace TogetherIsBetter
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            User user = new User();
+            Global.user = new User();
 
-            user.Role = "admin";
-            user.Username = "admin";
+            //Global.user.Role = "admin";
+            //Global.user.Username = "admin";
             ////user.Role = "user";
             ////user.Username = "user";
-            bool result = true;
+            //bool result = true;
 
-            //LoginForm loginFrm = new LoginForm(user);
-            //bool result = (bool)loginFrm.ShowDialog();            
+            LoginForm loginFrm = new LoginForm(Global.user);
+            bool result = (bool)loginFrm.ShowDialog();            
 
             if (result)
             {
@@ -35,9 +35,12 @@ namespace TogetherIsBetter
                 Global.companies = generic.GetAll().ToList();
                 generic.Dispose();
                 
+                //hardcoded company to user!!!
+                Global.user.Company = Global.companies[0];
+                //Global.user.Company = Global.companies.Find(c => c.Id == Global.user.CompanyId);
 
                 // show main window
-                MainWindow appmainwindow = new MainWindow(user);
+                MainWindow appmainwindow = new MainWindow(Global.user);
                 Application.Current.MainWindow = appmainwindow;
                 appmainwindow.Activate();
                 appmainwindow.Show();

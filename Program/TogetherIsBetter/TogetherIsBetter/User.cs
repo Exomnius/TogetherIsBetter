@@ -10,12 +10,19 @@ namespace TogetherIsBetter
     {
 
         private String username, role;
+        private Company company;
         private bool authenticated;
 
         public bool Authenticated
         {
             get { return authenticated; }
             set { authenticated = value; }
+        }
+
+        public Company Company
+        {
+            get { return company; }
+            set { company = value; }
         }
 
         public String Role
