@@ -131,6 +131,40 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
+            <TabItem Header="Locations">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-1,-1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="67*"/>
+                        <RowDefinition Height="49"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" Content="All locations" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top" Height="26" Width="135"/>
+                    <ListBox x:Name="lbLocations" Grid.Row="1" Margin="10,0" Grid.RowSpan="1" MouseDoubleClick="lbLocations_MouseDoubleClick"/>
+
+
+                    <StackPanel Grid.Row="3" Margin="0,2,10,10" MinHeight="40" Width="231" HorizontalAlignment="Right" Orientation="Horizontal">
+                        <Button x:Name="btnNewLocation" Margin="5" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1" Click="btnNewLocation_Click">
+                            <DockPanel>
+                                <Image Source="../images/add.png" Height="15" Margin="0,0,5,0"/>
+                                <TextBlock VerticalAlignment="center">New</TextBlock>
+                            </DockPanel>
+                        </Button>
+                        <Button x:Name="btnEditLocation" Margin="5" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1" Click="btnEditLocation_Click">
+                            <DockPanel>
+                                <Image Source="../images/edit.png" Height="15" Margin="0,0,5,0"/>
+                                <TextBlock VerticalAlignment="center">Edit</TextBlock>
+                            </DockPanel>
+                        </Button>
+                        <Button x:Name="btnDeleteLocation" Margin="5" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1" Click="btnDeleteLocation_Click">
+                            <DockPanel>
+                                <Image Source="../images/remove.png" Height="15" Margin="0,0,5,0"/>
+                                <TextBlock VerticalAlignment="center">Delete</TextBlock>
+                            </DockPanel>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
         </TabControl>
 
 

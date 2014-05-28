@@ -20,9 +20,7 @@ public partial class Location
 
     public Location()
     {
-
         this.Reservation = new HashSet<Reservation>();
-
     }
 
 

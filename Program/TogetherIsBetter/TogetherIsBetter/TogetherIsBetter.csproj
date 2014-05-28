@@ -147,6 +147,9 @@
       <DependentUpon>TIB_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Val.cs" />
+    <Compile Include="Views\LocationFrm.xaml.cs">
+      <DependentUpon>LocationFrm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CompanyFrm.xaml.cs">
       <DependentUpon>CompanyFrm.xaml</DependentUpon>
     </Compile>
@@ -192,6 +195,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TIB_Model.edmx</DependentUpon>
     </Compile>
+    <Page Include="Views\LocationFrm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\CompanyFrm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
