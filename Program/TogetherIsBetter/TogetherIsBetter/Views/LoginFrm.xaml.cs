@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Web.Security;
+using TogetherIsBetter.Model;
 
 namespace TogetherIsBetter
 {
@@ -42,9 +43,28 @@ namespace TogetherIsBetter
             {
                 user.Authenticated = true;
                 user.Username = username;
+                user.Membership = Membership.GetUser(username);
 
                 if (Roles.IsUserInRole(username, "admin"))
                     user.Role = "admin";
+
+
+                // get usersPerCompany
+                Generic<UsersPerCompany> usersPerCompany = new Generic<UsersPerCompany>();
+                UsersPerCompany userCompany = usersPerCompany.GetAll().ToList().Find(u => u.UserId == (Guid)user.Membership.ProviderUserKey);
+                usersPerCompany.Dispose();
+
+                if (userCompany != null)
+                {
+                    // get users company
+                    Generic<Company> company = new Generic<Company>();
+                    user.Company = company.Get(userCompany.CompanyId);
+                }
+
+                if (user.Company == null)
+                {
+
+                }
 
                 this.DialogResult = true;
                 this.Close();

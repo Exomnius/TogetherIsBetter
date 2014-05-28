@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Security;
 
 namespace TogetherIsBetter
 {
@@ -11,6 +12,13 @@ namespace TogetherIsBetter
 
         private String username, role;
         private Company company;
+        private MembershipUser membership;
+
+        public MembershipUser Membership
+        {
+            get { return membership; }
+            set { membership = value; }
+        }
         private bool authenticated;
 
         public bool Authenticated
