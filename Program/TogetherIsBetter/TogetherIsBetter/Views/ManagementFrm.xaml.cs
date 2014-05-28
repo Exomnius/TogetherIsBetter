@@ -29,6 +29,8 @@ namespace TogetherIsBetter.Views
             loadContractFormula();
         }
 
+        #region Company
+
         // reloads all companies and refreshes ListBox
         public void loadCompanies()
         {
@@ -134,7 +136,9 @@ namespace TogetherIsBetter.Views
                 loadCompanies();
             }
         }
-        
+        #endregion
+
+        #region Contract
         private void btnNewContract_Click(object sender, RoutedEventArgs e)
         {
             Contract nContract = new Contract();
@@ -216,6 +220,57 @@ namespace TogetherIsBetter.Views
             //int index = lbCompanies.SelectedIndex;
         }
 
+
+        private void loadContracts()
+        {
+            Generic<Contract> generic = new Generic<Contract>();
+            Global.contracts = generic.GetAll().ToList();
+            generic.Dispose();
+
+            lvContracts.Items.Clear();
+            foreach (Contract contract in Global.contracts)
+            {
+                if (showAllContracts)
+                {
+                    lvContracts.Items.Add(contract);
+                }
+                else
+                {
+                    int res = ((DateTime)contract.EndDate).CompareTo(DateTime.Today);
+                    if (res >= 0)
+                        lvContracts.Items.Add(contract);
+                }
+
+            }
+        }
+
+        private void lvContracts_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
+        {
+            if (lvContracts.SelectedIndex == -1)
+                return;
+
+            Contract contract = (Contract)lvContracts.SelectedItem;
+            saveUpdateContract(Global.contracts.Find(c => c.Id == contract.Id));
+            loadContracts();
+        }
+
+        private void cboxShowAllContracts_Checked(object sender, RoutedEventArgs e)
+        {
+            lblContracts.Content = "Showing: all contracts";
+            showAllContracts = true;
+            loadContracts();
+        }
+
+        private void cboxShowAllContracts_Unchecked(object sender, RoutedEventArgs e)
+        {
+            lblContracts.Content = "Showing: active contracts";
+            showAllContracts = false;
+            loadContracts();
+
+        }
+        #endregion
+
+        #region Formulas
         private void btnNewFormula_Click(object sender, RoutedEventArgs e)
         {
             ContractFormula nFormula = new ContractFormula();
@@ -261,31 +316,6 @@ namespace TogetherIsBetter.Views
             }
         }
 
-        
-
-        private void loadContracts()
-        {
-            Generic<Contract> generic = new Generic<Contract>();
-            Global.contracts = generic.GetAll().ToList();
-            generic.Dispose();
-
-            lvContracts.Items.Clear();
-            foreach (Contract contract in Global.contracts)
-            {
-                if (showAllContracts)
-                {
-                    lvContracts.Items.Add(contract);   
-                }
-                else
-                {
-                    int res = ((DateTime)contract.EndDate).CompareTo(DateTime.Today);
-                    if (res >= 0)
-                        lvContracts.Items.Add(contract);
-                }
-                
-            }
-        }
-
         private void loadContractFormula()
         {
             // load companies from db
@@ -303,32 +333,6 @@ namespace TogetherIsBetter.Views
         private void lbContractFormula_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-        }
-
-
-        private void lvContracts_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
-        {
-            if (lvContracts.SelectedIndex == -1)
-                return;
-
-            Contract contract = (Contract)lvContracts.SelectedItem;
-            saveUpdateContract(Global.contracts.Find(c => c.Id == contract.Id));
-            loadContracts();
-        }
-
-        private void cboxShowAllContracts_Checked(object sender, RoutedEventArgs e)
-        {
-            lblContracts.Content = "Showing: all contracts";
-            showAllContracts = true;
-            loadContracts();
-        }
-
-        private void cboxShowAllContracts_Unchecked(object sender, RoutedEventArgs e)
-        {
-            lblContracts.Content = "Showing: active contracts";
-            showAllContracts = false;
-            loadContracts();
-            
         }
 
 
@@ -416,11 +420,98 @@ namespace TogetherIsBetter.Views
 
             loadContracts();
         }
+        #endregion
 
+        #region Locations
+        private void btnNewLocation_Click(object sender, RoutedEventArgs e)
+        {
+            Location nLocation = new Location();
 
+            int index = lbLocations.SelectedIndex;
+            saveUpdateLocation(nLocation);
+        }
 
+        private void btnEditLocation_Click(object sender, RoutedEventArgs e)
+        {
+            int index = lbLocations.SelectedIndex;
+            if (index == -1) return;
 
-        
-        
+            saveUpdateLocation(Global.locations[index]);
+        }
+
+        private void btnDeleteLocation_Click(object sender, RoutedEventArgs e)
+        {
+            // return if no selection made
+            int index = lbLocations.SelectedIndex;
+            if (index == -1) return;
+
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this location?", "Are you sure?", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    Generic<Location> generic = new Generic<Location>();
+                    generic.Delete(Global.locations[index]);
+                    generic.Dispose();
+
+                    MessageBox.Show("The location was removed successfully", "Location removed", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    Console.Write(ex.ToString());
+                    MessageBox.Show("There was a problem removing the location from the database. Please try again later or contact a sysadmin.", "Database Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+
+                loadLocations();
+            }
+        }
+
+        private void lbLocations_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            int index = lbLocations.SelectedIndex;
+            saveUpdateLocation(Global.locations[index]);
+        }
+
+        public void saveUpdateLocation(Location location)
+        {
+            LocationFrm cFrm = new LocationFrm(location);
+            bool result = (bool)cFrm.ShowDialog();
+            cFrm.Close();
+
+            if (result)
+            {
+                try
+                {
+                    Generic<Location> gen = new Generic<Location>();
+                    if (location.Id == 0)
+                        gen.Add(location);
+                    else
+                        gen.Update(location, location.Id);
+
+                    gen.Dispose();
+                    MessageBox.Show("The location was saved successfully updated", "Location saved", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    Console.Write(ex.ToString());
+                    MessageBox.Show("There was a problem saving this location to the database. Please try again later or contact a sysadmin.", "Database Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+        }
+
+        private void loadLocations()
+        {
+            // load companies from db
+            Generic<Location> generic = new Generic<Location>();
+            Global.locations = generic.GetAll().ToList();
+            generic.Dispose();
+
+            lbLocations.Items.Clear();
+            foreach (Location location in Global.locations)
+            {
+                lbLocations.Items.Add(String.Format("{0}", location.Name));
+            }
+        }
+        #endregion
     }
 }
