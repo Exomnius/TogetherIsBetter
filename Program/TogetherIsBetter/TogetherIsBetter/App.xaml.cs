@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
@@ -16,39 +17,57 @@ namespace TogetherIsBetter
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            Global.user = new User();
 
-            //Global.user.Role = "admin";
-            //Global.user.Username = "admin";
-            ////user.Role = "user";
-            ////user.Username = "user";
-            //bool result = true;
+            startApp(debugMode: false);
+            //startApp(debugMode: true);
+      
+            
+        }
 
-            LoginForm loginFrm = new LoginForm(Global.user);
-            bool result = (bool)loginFrm.ShowDialog();            
+        public static void startApp(bool debugMode = false){
 
-            if (result)
+            if (debugMode)
             {
+                Global.user = new User();
+                Global.user.Role = "admin";
+                Global.user.Username = "admin";
+                // Global.user.Role = "user";
+                // Global.user.Username = "user";
+            }
+
+            if (debugMode || showLoginFrm())
+            {
+                // user logged in
                 // init global vars
-                //Global.companies = Companies.getCompanies();
                 Generic<Company> generic = new Generic<Company>();
                 Global.companies = generic.GetAll().ToList();
                 generic.Dispose();
-                
-                //hardcoded company to user!!!
-                Global.user.Company = Global.companies[0];
-                //Global.user.Company = Global.companies.Find(c => c.Id == Global.user.CompanyId);
 
                 // show main window
                 MainWindow appmainwindow = new MainWindow(Global.user);
-                Application.Current.MainWindow = appmainwindow;
                 appmainwindow.Activate();
-                appmainwindow.Show();
+                appmainwindow.ShowDialog();
+
+                if (appmainwindow.logout) // user clicked logout
+                {
+                    Process.Start(Application.ResourceAssembly.Location); // starts new instance of program
+                }
             }
-            else
-            {
-                Application.Current.Shutdown();
-            }
+
+            Application.Current.Shutdown();
+
+        }
+
+
+        public static bool showLoginFrm()
+        {
+            Global.user = new User();
+            LoginForm loginFrm = new LoginForm(Global.user);
+
+            bool result = (bool)loginFrm.ShowDialog();
+            loginFrm.Close();
+            
+            return result;
         }
     }
 }

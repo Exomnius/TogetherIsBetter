@@ -25,14 +25,18 @@ namespace TogetherIsBetter
     {
         private User user; // check if admin: user.Role == "admin"
         private List<Appointment> _myAppointmentsList = new List<Appointment>();
+        public bool logout { get; set; } // used when logout button is clicked
 
         public MainWindow(User user)
         {
             InitializeComponent();
             this.user = user;
 
-            if (user.Role != "admin")
-                this.btnManagement.Visibility = Visibility.Hidden;   
+            if (user.IsAdmin)
+                this.btnManagement.Content = "Management";
+            else
+                this.btnManagement.Content = "Settings";
+
         }      
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -146,14 +150,25 @@ namespace TogetherIsBetter
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            this.logout = true;
+            this.Hide();
         }
 
 
         private void btnManagement_Click(object sender, RoutedEventArgs e)
         {
-            ManagementFrm contractFrm = new ManagementFrm();
-            contractFrm.Show();
+            if (user.IsAdmin)
+            {
+                ManagementFrm contractFrm = new ManagementFrm();
+                contractFrm.ShowDialog();
+                contractFrm.Close();
+            }
+            else
+            {
+                SettingsFrm settingsFrm = new SettingsFrm();
+                settingsFrm.ShowDialog();
+                settingsFrm.Close();
+            }
         }
 
         private void btnProfile_Click(object sender, RoutedEventArgs e)
@@ -164,7 +179,9 @@ namespace TogetherIsBetter
         }
 
 
-  
+
+
+
         
     }
 }

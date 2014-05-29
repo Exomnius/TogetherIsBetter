@@ -22,7 +22,7 @@ namespace TogetherIsBetter
     public partial class LoginForm : Window
     {
         User user;
-
+        public bool result;
         public LoginForm(User user)
         {
             InitializeComponent();
@@ -44,10 +44,12 @@ namespace TogetherIsBetter
                 user.Authenticated = true;
                 user.Username = username;
                 user.Membership = Membership.GetUser(username);
+                result = true;
 
                 if (Roles.IsUserInRole(username, "admin"))
                     user.Role = "admin";
-
+                else
+                    user.Role = "user";
 
                 // get usersPerCompany
                 Generic<UsersPerCompany> usersPerCompany = new Generic<UsersPerCompany>();
@@ -61,6 +63,14 @@ namespace TogetherIsBetter
                     user.Company = company.Get(userCompany.CompanyId);
                     company.Dispose();
                 }
+                else
+                {
+                    // get default company - hardcoded
+                    Generic<Company> company = new Generic<Company>();
+                    user.Company = company.Get(1);
+                    company.Dispose();
+                }
+
 
                 this.DialogResult = true;
                 this.Close();

@@ -13,6 +13,22 @@ namespace TogetherIsBetter
         private String username, role;
         private Company company;
         private MembershipUser membership;
+        private int companyId;
+        private bool isAdmin;
+
+        public bool IsAdmin
+        {
+            get {
+                if(role == "admin") isAdmin = true;
+                return isAdmin; 
+            }
+        }
+
+        public int CompanyId
+        {
+            get { return companyId; }
+            set { companyId = value; }
+        }
 
         public MembershipUser Membership
         {

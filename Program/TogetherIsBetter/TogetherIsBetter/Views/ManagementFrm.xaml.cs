@@ -497,6 +497,8 @@ namespace TogetherIsBetter.Views
                     Console.Write(ex.ToString());
                     MessageBox.Show("There was a problem saving this location to the database. Please try again later or contact a sysadmin.", "Database Error", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
+
+                loadLocations();
             }
         }
 

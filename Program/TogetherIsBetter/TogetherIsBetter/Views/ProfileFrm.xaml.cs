@@ -41,6 +41,9 @@ namespace TogetherIsBetter.Forms
             cboCompany.DisplayMemberPath = "Name";
             cboCompany.SelectedValuePath = "id";
 
+            if (Global.user.Role == "user")
+                cboCompany.IsEnabled = false;
+
             // initial value
             cboCompany.SelectedItem = company;
             if (user != null)

@@ -195,6 +195,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TIB_Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Views\SettingsFrm.xaml.cs">
+      <DependentUpon>SettingsFrm.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\LocationFrm.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -243,6 +246,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\SettingsFrm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
