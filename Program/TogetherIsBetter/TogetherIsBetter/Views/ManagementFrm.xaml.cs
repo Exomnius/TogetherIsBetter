@@ -27,6 +27,7 @@ namespace TogetherIsBetter.Views
             loadCompanies();
             loadContracts();
             loadContractFormula();
+            loadLocations();
         }
 
         #region Company

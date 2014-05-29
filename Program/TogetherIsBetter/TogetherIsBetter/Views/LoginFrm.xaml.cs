@@ -59,11 +59,7 @@ namespace TogetherIsBetter
                     // get users company
                     Generic<Company> company = new Generic<Company>();
                     user.Company = company.Get(userCompany.CompanyId);
-                }
-
-                if (user.Company == null)
-                {
-
+                    company.Dispose();
                 }
 
                 this.DialogResult = true;
@@ -87,6 +83,7 @@ namespace TogetherIsBetter
             if (collection.Count == 0)
             {
                 Membership.CreateUser("admin", "admin!");
+                saveDefaultUsersCompany("admin");    
 
                 if (!Roles.RoleExists("admin"))
                     Roles.CreateRole("admin");
@@ -99,12 +96,24 @@ namespace TogetherIsBetter
             if (collection.Count == 0)
             {
                 Membership.CreateUser("user", "user!");
+                saveDefaultUsersCompany("user");
 
                 if (!Roles.RoleExists("user"))
                     Roles.CreateRole("user");
                 if (!Roles.IsUserInRole("user", "user"))
                     Roles.AddUserToRole("user", "user");
             } 
+        }
+
+        private void saveDefaultUsersCompany(String username)
+        {
+            UsersPerCompany userCompany = new UsersPerCompany();
+            userCompany.UserId = (Guid)Membership.GetUser(username).ProviderUserKey;
+            userCompany.CompanyId = 1;
+
+            Generic<UsersPerCompany> generic = new Generic<UsersPerCompany>();
+            generic.Add(userCompany);
+            generic.Dispose();
         }
 
         private void Login_Closing(object sender, System.ComponentModel.CancelEventArgs e)

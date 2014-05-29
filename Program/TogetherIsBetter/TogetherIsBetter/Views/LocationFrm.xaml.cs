@@ -26,15 +26,7 @@ namespace TogetherIsBetter.Views
             InitializeComponent();
             this.location = location;
 
-            // initialize values
-            //tbName.Text = location.Name;
-            //tbStreet.Text = location.Street;
-            //tbZipcode.Text = location.Zipcode;
-            //tbCity.Text = location.City;
-            //tbCountry.Text = location.Country;
-            //tbEmail.Text = location.Email;
-            //tbPhone.Text = location.Phone;
-            //tbEmployees.Text = location.Emplyees.ToString();
+            tbName.Text = location.Name;
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
