@@ -27,6 +27,7 @@ namespace TogetherIsBetter
         {
             InitializeComponent();
             this.user = user;
+            tbUsername.Focus();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -67,7 +68,7 @@ namespace TogetherIsBetter
             }
             else
             {
-                MessageBox.Show("Ongeldige gebruikersnaam en/of wachtwoord.");
+                MessageBox.Show("Invalid username and/or password.");
                 user.Authenticated = false;
             }
 

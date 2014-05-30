@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TogetherIsBetter", "TogetherIsBetter\TogetherIsBetter.csproj", "{2CDCDC72-05E8-4818-B151-C421162489C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonthCalendar", "C:\Users\Cornel\Desktop\test\MonthCalendar.csproj", "{9986B357-8752-4CF2-B646-EF335C63013D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +15,10 @@ Global
 		{2CDCDC72-05E8-4818-B151-C421162489C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CDCDC72-05E8-4818-B151-C421162489C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CDCDC72-05E8-4818-B151-C421162489C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9986B357-8752-4CF2-B646-EF335C63013D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9986B357-8752-4CF2-B646-EF335C63013D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9986B357-8752-4CF2-B646-EF335C63013D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9986B357-8752-4CF2-B646-EF335C63013D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

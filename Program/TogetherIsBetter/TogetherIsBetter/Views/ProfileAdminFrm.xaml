@@ -23,7 +23,7 @@
         </Grid>
 
 
-        <StackPanel Grid.Row="4" Margin="0,0,10,0" MinHeight="40" Width="233" HorizontalAlignment="Right" Orientation="Horizontal">
+        <StackPanel Grid.Row="4" Margin="0,0,10,0" MinHeight="40" HorizontalAlignment="Right" Orientation="Horizontal">
             <Button x:Name="btnNewUser" Margin="5" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1" Click="btnNewUser_Click">
                 <DockPanel>
                     <Image Source="../images/add.png" Height="15" Margin="0,0,5,0"/>

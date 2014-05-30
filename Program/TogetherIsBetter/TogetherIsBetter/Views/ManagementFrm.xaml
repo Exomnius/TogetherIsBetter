@@ -16,7 +16,7 @@
                     <ListBox x:Name="lbCompanies" Grid.Row="1" Margin="10,0" Grid.RowSpan="1" MouseDoubleClick="lbCompanies_MouseDoubleClick"/>
 
 
-                    <StackPanel Grid.Row="3" Margin="0,2,10,10" MinHeight="40" Width="231" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <StackPanel Grid.Row="3" Margin="0,2,10,10" MinHeight="40" HorizontalAlignment="Right" Orientation="Horizontal">
                         <Button x:Name="btnNewCompany" Margin="5" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1" Click="btnNewCompany_Click">
                             <DockPanel>
                                 <Image Source="../images/add.png" Height="15" Margin="0,0,5,0"/>
@@ -32,7 +32,7 @@
                         <Button x:Name="btnDeleteCompany" Margin="5" Padding="10, 5" VerticalAlignment="center" Background="#FFF1F1F1" Click="btnDeleteCompany_Click">
                             <DockPanel>
                                 <Image Source="../images/remove.png" Height="15" Margin="0,0,5,0"/>
-                                <TextBlock VerticalAlignment="center">Delete</TextBlock>
+                                <TextBlock VerticalAlignment="center"><Run Text="Delete"/></TextBlock>
                             </DockPanel>
                         </Button>
                     </StackPanel>

@@ -32,13 +32,10 @@ namespace TogetherIsBetter
             this.user = user;
 
             if (user.Role != "admin")
-                this.btnManagement.Visibility = Visibility.Hidden;   
-        }      
+                this.btnManagement.Visibility = Visibility.Hidden;
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
             loadCalendar();
-        }
+        }      
 
         private void loadCalendar()
         {
@@ -58,6 +55,7 @@ namespace TogetherIsBetter
             }
 
             SetAppointments();
+
         }
 
         private void DayBoxDoubleClicked_event(NewAppointmentEventArgs e)

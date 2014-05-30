@@ -55,10 +55,6 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="MonthCalendar, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\MonthCalendar.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -326,6 +322,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Cornel\Desktop\test\MonthCalendar.csproj">
+      <Project>{9986b357-8752-4cf2-b646-ef335c63013d}</Project>
+      <Name>MonthCalendar</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
