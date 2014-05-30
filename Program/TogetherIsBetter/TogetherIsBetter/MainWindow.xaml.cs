@@ -39,10 +39,8 @@ namespace TogetherIsBetter
 
         }      
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
             loadCalendar();
-        }
+        }      
 
         private void loadCalendar()
         {
@@ -62,6 +60,7 @@ namespace TogetherIsBetter
             }
 
             SetAppointments();
+
         }
 
         private void DayBoxDoubleClicked_event(NewAppointmentEventArgs e)

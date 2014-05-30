@@ -23,7 +23,7 @@ namespace TogetherIsBetter.Views
         {
             InitializeComponent();
 
-            add listview of contracts
+            //add listview of contracts
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
