@@ -265,7 +265,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Fakes Include="Fakes\MonthCalendar.fakes" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -332,7 +331,7 @@
     <Resource Include="images\stop.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\Cornel\Desktop\test\MonthCalendar.csproj">
+    <ProjectReference Include="..\packages\MonthCalendar\MonthCalendar.csproj">
       <Project>{9986b357-8752-4cf2-b646-ef335c63013d}</Project>
       <Name>MonthCalendar</Name>
     </ProjectReference>

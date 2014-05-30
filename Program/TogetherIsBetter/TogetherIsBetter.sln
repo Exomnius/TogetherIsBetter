@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TogetherIsBetter", "TogetherIsBetter\TogetherIsBetter.csproj", "{2CDCDC72-05E8-4818-B151-C421162489C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonthCalendar", "C:\Users\Cornel\Desktop\test\MonthCalendar.csproj", "{9986B357-8752-4CF2-B646-EF335C63013D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonthCalendar", "packages\MonthCalendar\MonthCalendar.csproj", "{9986B357-8752-4CF2-B646-EF335C63013D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

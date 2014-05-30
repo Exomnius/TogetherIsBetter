@@ -37,8 +37,6 @@ namespace TogetherIsBetter
             else
                 this.btnManagement.Content = "Settings";
 
-        }      
-
             loadCalendar();
         }      
 
