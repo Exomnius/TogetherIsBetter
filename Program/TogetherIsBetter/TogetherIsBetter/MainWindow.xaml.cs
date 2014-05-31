@@ -32,13 +32,16 @@ namespace TogetherIsBetter
             InitializeComponent();
             this.user = user;
 
-            if (user.IsAdmin)
-                this.btnManagement.Content = "Management";
-            else
-                this.btnManagement.Content = "Settings";
+            if (user.IsAdmin){
+                btnManagementText.Text = "Management";
+            }
+            else {
+                btnManagementText.Text = "Settings";
+                ActionButtons.Width = 267;
+            }
 
             loadCalendar();
-        }      
+        }
 
         private void loadCalendar()
         {
@@ -52,7 +55,7 @@ namespace TogetherIsBetter
                 apt.AppointmentID = reservations[i].Id;
                 apt.StartTime = reservations[i].StartDate;
                 apt.EndTime = reservations[i].EndDate;
-                
+
                 apt.Subject = Global.companies.Find(c => c.Id == reservations[i].CompanyId).Name;
                 _myAppointmentsList.Add(apt);
             }
@@ -63,6 +66,13 @@ namespace TogetherIsBetter
 
         private void DayBoxDoubleClicked_event(NewAppointmentEventArgs e)
         {
+
+            if (e.StartDate < DateTime.Today)
+            {
+                MessageBox.Show("Sorry. No reservations can be made in the past.", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
             //MessageBox.Show("You double-clicked on day " + Convert.ToDateTime(e.StartDate).ToShortDateString(), "Calendar Event", MessageBoxButton.OK);
             Reservation reservation = new Reservation();
             reservation.StartDate = Convert.ToDateTime(e.StartDate).Date + DateTime.Now.TimeOfDay;
@@ -80,7 +90,7 @@ namespace TogetherIsBetter
                         gen.Add(reservation);
                     else
                         gen.Update(reservation, reservation.Id);
-                    
+
                     gen.Dispose();
                     MessageBox.Show("The reservation was saved successfully", "Reservation saved", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
@@ -154,6 +164,7 @@ namespace TogetherIsBetter
 
         private void btnManagement_Click(object sender, RoutedEventArgs e)
         {
+
             if (user.IsAdmin)
             {
                 ManagementFrm contractFrm = new ManagementFrm();
@@ -162,15 +173,33 @@ namespace TogetherIsBetter
             }
             else
             {
-                SettingsFrm settingsFrm = new SettingsFrm();
-                settingsFrm.ShowDialog();
+                SettingsFrm settingsFrm = new SettingsFrm(user);
+                bool result = (bool)settingsFrm.ShowDialog();
                 settingsFrm.Close();
+
+                if (result)
+                    updateCompany(user.Company);
+            }
+        }
+
+        public void updateCompany(Company company)
+        {
+            try
+            {
+                Generic<Company> gen = new Generic<Company>();
+                gen.Update(company, company.Id);
+                gen.Dispose();
+                MessageBox.Show("Your company was saved successfully", "Company saved", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.ToString());
+                MessageBox.Show("There was a problem saving your company to the database. Please try again later or contact a sysadmin.", "Database Error", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 
         private void btnProfile_Click(object sender, RoutedEventArgs e)
         {
-
             ProfileAdminFrm form = new ProfileAdminFrm();
             form.ShowDialog();
         }
@@ -179,6 +208,7 @@ namespace TogetherIsBetter
 
 
 
-        
+
+
     }
 }

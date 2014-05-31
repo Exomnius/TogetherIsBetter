@@ -22,7 +22,6 @@ namespace TogetherIsBetter.Views
     {
 
         public Contract contract;
-        private bool isNewContract;
 
         public ContractFrm(Contract contract)
         {
@@ -32,7 +31,6 @@ namespace TogetherIsBetter.Views
             // this is a new contract
             if (contract.Id == 0)
             {
-                isNewContract = true;
                 // preselect start date
                 dateStart.SelectedDate = DateTime.Today;
             }
@@ -55,6 +53,9 @@ namespace TogetherIsBetter.Views
             cboContractFormula.DisplayMemberPath = "Description";
             cboContractFormula.SelectedValuePath = "id";
 
+            if (!Global.user.IsAdmin)
+                cboCompany.IsEnabled = false;
+
             // preselect company and formula
             if (contract.CompanyId != 0 && contract.ContractFormulaId != 0)
             {
@@ -62,6 +63,10 @@ namespace TogetherIsBetter.Views
                 {
                     if (Global.companies[i].Id == contract.CompanyId)
                         cboCompany.SelectedIndex = i;
+                }
+
+                for (int i = 0; i < Global.contractFormula.Count; i++)
+                {
                     if (Global.contractFormula[i].Id == contract.ContractFormulaId)
                         cboContractFormula.SelectedIndex = i;
                 }
@@ -99,9 +104,30 @@ namespace TogetherIsBetter.Views
 
             if(companyIndex == -1)
                 error += "A company must be selected. \n";
-            
-            if(formulaIndex == -1)
+
+            if (formulaIndex == -1)
+            {
                 error += "A contract formula must be selected. \n";
+            }
+            
+            // check if start and end date add up to the length specified by the contract formula (allow error margin of 3 days) 
+            if(formulaIndex != -1 && endDate != null && startDate != null)
+            {
+                ContractFormula formula = Global.contractFormula[formulaIndex];
+                if (formula.PeriodInMonths != null)
+                {
+                    int formulaLengthDays = (int)formula.PeriodInMonths * 30;
+                    TimeSpan difference = ((DateTime)endDate) - ((DateTime)startDate);
+                    
+                    int daysDifferent = (int)difference.TotalDays - formulaLengthDays;
+                    if (daysDifferent > 3)
+                    {
+                        error += String.Format("Incorrect end date. This contract should last for {0} months.", formulaLengthDays/30);
+                    }
+                }
+            }
+
+
 
             if (error != "")
             {
@@ -111,12 +137,15 @@ namespace TogetherIsBetter.Views
             }
 
             // check for overlapping contracts
-            foreach (Contract c in Global.contracts)
-                if (c.CompanyId == Global.companies[companyIndex].Id && startDate <= c.EndDate)
+            foreach (Contract contract in Global.contracts)
+                if (contract.CompanyId == Global.companies[companyIndex].Id && startDate <= contract.EndDate && this.contract.Id != contract.Id)
                 {
                     MessageBoxResult result = MessageBox.Show("There is another contract that overlaps with this one. Do you want to continue?", "Overlapping contract", MessageBoxButton.YesNo, MessageBoxImage.Information);
-                    if (result == MessageBoxResult.No)
+                    if (result == MessageBoxResult.Yes)
+                        break;
+                    else
                         return;
+                        
                 }
 
             this.contract.Number = Int32.Parse(number);
@@ -137,14 +166,31 @@ namespace TogetherIsBetter.Views
 
         private void cboContractFormula_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (isNewContract)
+            if (dateStart.SelectedDate != null && cboContractFormula.SelectedIndex != -1)
             {
+                // update end date according to selected formula
                 ContractFormula formula = (ContractFormula)cboContractFormula.SelectedItem;
 
                 int numMonths = (int)formula.PeriodInMonths;
-                dateEnd.SelectedDate = DateTime.Today.AddMonths(numMonths);
+                DateTime start = (DateTime)dateStart.SelectedDate;
+                dateEnd.SelectedDate = start.AddMonths(numMonths);
             }
-                
+        }
+
+        private void dateStart_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int formulaIndex = cboContractFormula.SelectedIndex;
+            if (formulaIndex == -1) return;
+
+            ContractFormula formula = Global.contractFormula[formulaIndex];
+
+            if (formula.PeriodInMonths != null && dateStart.SelectedDate != null)
+            {
+                int months = (int)formula.PeriodInMonths;
+                DateTime start = (DateTime)dateStart.SelectedDate;
+                // update end date 
+                dateEnd.SelectedDate = start.AddMonths(months);
+            }
         }
     }
 }

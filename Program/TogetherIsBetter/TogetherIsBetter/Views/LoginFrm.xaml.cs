@@ -34,7 +34,7 @@ namespace TogetherIsBetter
         {
 
             setDefaultUsers();
-            
+
             String username, password;
 
             username = tbUsername.Text;
@@ -88,13 +88,13 @@ namespace TogetherIsBetter
         // Add default user and admin
         private void setDefaultUsers()
         {
-            
+
             MembershipUserCollection collection = Membership.FindUsersByName("admin");
 
             if (collection.Count == 0)
             {
                 Membership.CreateUser("admin", "admin!");
-                saveDefaultUsersCompany("admin");    
+                saveDefaultUsersCompany("admin");
 
                 if (!Roles.RoleExists("admin"))
                     Roles.CreateRole("admin");
@@ -113,7 +113,7 @@ namespace TogetherIsBetter
                     Roles.CreateRole("user");
                 if (!Roles.IsUserInRole("user", "user"))
                     Roles.AddUserToRole("user", "user");
-            } 
+            }
         }
 
         private void saveDefaultUsersCompany(String username)
@@ -129,7 +129,7 @@ namespace TogetherIsBetter
 
         private void Login_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            
+
         }
     }
 }

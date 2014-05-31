@@ -20,20 +20,14 @@ namespace TogetherIsBetter
 
             startApp(debugMode: false);
             //startApp(debugMode: true);
-      
-            
+
+
         }
 
-        public static void startApp(bool debugMode = false){
+        public static void startApp(bool debugMode = false)
+        {
 
-            if (debugMode)
-            {
-                Global.user = new User();
-                Global.user.Role = "admin";
-                Global.user.Username = "admin";
-                // Global.user.Role = "user";
-                // Global.user.Username = "user";
-            }
+            
 
             if (debugMode || showLoginFrm())
             {
@@ -42,6 +36,17 @@ namespace TogetherIsBetter
                 Generic<Company> generic = new Generic<Company>();
                 Global.companies = generic.GetAll().ToList();
                 generic.Dispose();
+
+
+                if (debugMode)
+                {
+                    Global.user = new User();
+                    Global.user.Role = "user";
+                    Global.user.Username = "user";
+                    Global.user.Company = Global.companies[0];
+                    //Global.user.Role = "admin";
+                    //Global.user.Username = "admin";
+                }
 
                 // show main window
                 MainWindow appmainwindow = new MainWindow(Global.user);
@@ -66,7 +71,7 @@ namespace TogetherIsBetter
 
             bool result = (bool)loginFrm.ShowDialog();
             loginFrm.Close();
-            
+
             return result;
         }
     }

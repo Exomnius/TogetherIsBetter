@@ -218,7 +218,7 @@ namespace TogetherIsBetter.Views
 
         private void lvContracts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //int index = lbCompanies.SelectedIndex;
+            
         }
 
 
@@ -382,15 +382,14 @@ namespace TogetherIsBetter.Views
             int? monthsNotice = formula.NoticePeriodInMonths;
             DateTime endDate = (DateTime)contract.EndDate;
            
-            if (monthsNotice == null)
+            
+            if (endDate < DateTime.Today)
             {
-                if (endDate < DateTime.Today)
-                {
-                    MessageBox.Show("This contract has already endend", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
-                    return;
-                }
+                MessageBox.Show("This contract has already endend", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
             }
-            else if (DateTime.Today.AddMonths((int)monthsNotice) < endDate)
+            
+            if (monthsNotice != null && DateTime.Today.AddMonths((int)monthsNotice) < endDate)
             {
                 MessageBox.Show(String.Format("This contract can't be stopped. The contract formula requires a {0} month notice and this contract ends {1:dd-mm-yy}. ", (int)monthsNotice, endDate), "Info", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
@@ -411,7 +410,10 @@ namespace TogetherIsBetter.Views
                 Generic<Contract> gen = new Generic<Contract>();
                 gen.Update(contract, contract.Id);
                 gen.Dispose();
-                MessageBox.Show("The contract has been stopped successfully", "Contract saved", MessageBoxButton.OK, MessageBoxImage.Information);
+                if (monthsNotice == null)
+                    MessageBox.Show("The contract has been stopped successfully.", "Contract saved", MessageBoxButton.OK, MessageBoxImage.Information);
+                else
+                    MessageBox.Show(String.Format("The contract has a {0} months notice period. The end date has been adjusted accordingly.", (int)monthsNotice), "Contract saved", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception ex)
             {
@@ -497,8 +499,6 @@ namespace TogetherIsBetter.Views
                     Console.Write(ex.ToString());
                     MessageBox.Show("There was a problem saving this location to the database. Please try again later or contact a sysadmin.", "Database Error", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-
-                loadLocations();
             }
         }
 

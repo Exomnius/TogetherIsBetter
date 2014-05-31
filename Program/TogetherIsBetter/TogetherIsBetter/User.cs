@@ -18,9 +18,10 @@ namespace TogetherIsBetter
 
         public bool IsAdmin
         {
-            get {
-                if(role == "admin") isAdmin = true;
-                return isAdmin; 
+            get
+            {
+                if (role == "admin") isAdmin = true;
+                return isAdmin;
             }
         }
 

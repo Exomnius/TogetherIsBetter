@@ -88,8 +88,7 @@
                     <ListView x:Name="lvContracts" Margin="10" Grid.Row="1" MouseDoubleClick="lvContracts_MouseDoubleClick_1">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn DisplayMemberBinding="{Binding Path=Number}" />
-                                <GridViewColumn Header="Company" DisplayMemberBinding="{Binding Path=CompanyName}" />
+                                <GridViewColumn Header="#" DisplayMemberBinding="{Binding Path=Number}" />
                                 <GridViewColumn Header="Start" DisplayMemberBinding="{Binding Path=StartDate, StringFormat='{}{0:dd/MM/yy}'}" />
                                 <GridViewColumn Header="End" DisplayMemberBinding="{Binding Path=EndDate, StringFormat='{}{0:dd/MM/yy}'}" />
                             </GridView>

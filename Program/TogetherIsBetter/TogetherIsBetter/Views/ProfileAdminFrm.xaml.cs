@@ -35,10 +35,10 @@ namespace TogetherIsBetter.Views
             cboCompany.SelectedValuePath = "id";
             cboCompany.SelectedIndex = 0;
 
-            if (Global.user.Role == "user")
+            if (!Global.user.IsAdmin)
                 cboCompany.IsEnabled = false;
 
-            getUsersForSelectedCompany();          
+            getUsersForSelectedCompany();
         }
 
         public void getUsersForSelectedCompany()

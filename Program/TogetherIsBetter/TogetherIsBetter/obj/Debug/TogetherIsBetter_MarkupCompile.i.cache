@@ -4,26 +4,17 @@
 winexe
 C#
 .cs
-D:\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\
 TogetherIsBetter
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
-D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\App.xaml
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\App.xaml
 11-984700157
 
 421956264474
-26661773257
+261047085298
 Views\LocationFrm.xaml;Views\CompanyFrm.xaml;Views\ReservationFrm.xaml;Views\ContractFormulaFrm.xaml;Views\ContractFrm.xaml;Views\ManagementFrm.xaml;Views\LoginFrm.xaml;Views\ProfileAdminFrm.xaml;Views\ProfileFrm.xaml;MainWindow.xaml;Views\SettingsFrm.xaml;
-=======
-D:\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\App.xaml
-10-1266244775
-
-41-359143986
-261167208904
-Views\LocationFrm.xaml;Views\CompanyFrm.xaml;Views\ReservationFrm.xaml;Views\ContractFormulaFrm.xaml;Views\ContractFrm.xaml;Views\ManagementFrm.xaml;Views\LoginFrm.xaml;Views\ProfileAdminFrm.xaml;Views\ProfileFrm.xaml;MainWindow.xaml;
->>>>>>> b8e359b74c710e9d2dc2303a4528bc6cc18411cb
 
 False
 

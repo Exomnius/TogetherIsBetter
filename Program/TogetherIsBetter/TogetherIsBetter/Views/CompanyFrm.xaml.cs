@@ -131,7 +131,7 @@ namespace TogetherIsBetter.Views
                 error += "Phone can't be more than 12 characters long. \n";
             }
 
-            if (Val.isEmpty(employeesString) && Val.isNumber(employeesString))
+            if (!Val.isEmpty(employeesString) && !Val.isNumber(employeesString))
             {
                 error += "Employees must be a number. \n";
             }
@@ -157,16 +157,16 @@ namespace TogetherIsBetter.Views
                 company.Country = country;
                 company.Email = email;
                 company.Phone = phone;
-                
-                if (employees != -1)
+
+                if (!Val.isEmpty(employeesString) && employees != -1)
                 {
                     company.Emplyees = employees;
                 }
-                
+
 
                 this.DialogResult = true;
                 this.Hide();
-            }            
+            }   
 
         }
     }

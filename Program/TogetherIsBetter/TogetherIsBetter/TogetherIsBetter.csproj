@@ -265,6 +265,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -287,11 +290,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TIB_Model.edmx</DependentUpon>
       <LastGenOutput>TIB_Model.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>

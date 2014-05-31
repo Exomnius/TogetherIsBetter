@@ -102,10 +102,6 @@ C:\TIB\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\LocationFrm.g.c
 D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.csprojResolveAssemblyReference.cache
 D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\LocationFrm.baml
 D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\LocationFrm.g.cs
-<<<<<<< HEAD
-D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\SettingsFrm.baml
-D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\SettingsFrm.g.cs
-=======
 D:\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.exe.config
 D:\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.exe
 D:\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.pdb
@@ -161,8 +157,60 @@ D:\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Toge
 D:\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\Res\ForwardGreen.png
 D:\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\MonthCalendar.dll
 D:\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\MonthCalendar.pdb
->>>>>>> b8e359b74c710e9d2dc2303a4528bc6cc18411cb
-D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.csprojFakesResolveAssemblyReference.cache
-D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\Res\ForwardGreen.png
-D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\MonthCalendar.dll
-D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\MonthCalendar.pdb
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\Res\ForwardGreen.png
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.exe.config
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.exe
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\TogetherIsBetter.pdb
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.SqlServer.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\MonthCalendar.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\Xceed.Wpf.AvalonDock.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\Xceed.Wpf.DataGrid.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\Xceed.Wpf.Toolkit.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\MonthCalendar.pdb
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.xml
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\EntityFramework.SqlServer.xml
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.csprojResolveAssemblyReference.cache
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\LocationFrm.baml
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\CompanyFrm.baml
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\ReservationFrm.baml
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\ContractFormulaFrm.baml
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\ContractFrm.baml
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\ManagementFrm.baml
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\LoginFrm.baml
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\ProfileAdminFrm.baml
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\ProfileFrm.baml
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\MainWindow.baml
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\App.baml
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\LocationFrm.g.cs
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\CompanyFrm.g.cs
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\ReservationFrm.g.cs
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\ContractFormulaFrm.g.cs
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\ContractFrm.g.cs
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\ManagementFrm.g.cs
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\LoginFrm.g.cs
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\ProfileAdminFrm.g.cs
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\ProfileFrm.g.cs
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\MainWindow.g.cs
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\App.g.cs
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter_MarkupCompile.cache
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.g.resources
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.Properties.Resources.resources
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.csproj.GenerateResource.Cache
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.exe
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.pdb
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\SettingsFrm.baml
+d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\SettingsFrm.g.cs
