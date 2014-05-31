@@ -207,6 +207,27 @@ namespace TogetherIsBetter.Views
         {
             this.DialogResult = false;
             this.Hide();
+        }
+
+        private void btnDeleteReservation_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBoxResult.Yes == MessageBox.Show("Are you sure you want to delete this reservation?", "Are you sure?", MessageBoxButton.YesNo))
+            {
+                try
+                {
+                    Generic<Reservation> generic = new Generic<Reservation>();
+                    generic.Delete(reservation);
+                    generic.Dispose();
+
+                    MessageBox.Show("The reservation was removed successfully", "Reservation removed", MessageBoxButton.OK, MessageBoxImage.Information);
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.Write(ex.ToString());
+                    MessageBox.Show("There was a problem removing this reservation from the database. Please try again later or contact a sysadmin.", "Database Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }   
         } 
     }
 }
