@@ -214,3 +214,8 @@ d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsB
 d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\TogetherIsBetter.pdb
 d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\SettingsFrm.baml
 d:\Users\Ik\Desktop\TogetherIsBetter-master\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\SettingsFrm.g.cs
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\Res\ForwardGreen.png
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\MonthCalendar.dll
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\bin\Debug\MonthCalendar.pdb
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\SettingsFrm.baml
+D:\users\Ik\Documents\PHL\P3\Geintegreerd project\GIT\TogetherIsBetter\Program\TogetherIsBetter\TogetherIsBetter\obj\Debug\Views\SettingsFrm.g.cs
