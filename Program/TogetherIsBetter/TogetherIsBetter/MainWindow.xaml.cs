@@ -39,18 +39,17 @@ namespace TogetherIsBetter
 
         private void loadCalendar()
         {
-            Generic<Reservation> gen = new Generic<Reservation>();
-            List<Reservation> reservations = gen.GetAll().ToList();
-            gen.Dispose();
+            loadReservations();
+            _myAppointmentsList.Clear();
 
-            for (int i = 0; i < reservations.Count; i++)
+            for (int i = 0; i < Global.reservations.Count; i++)
             {
                 Appointment apt = new Appointment();
-                apt.AppointmentID = reservations[i].Id;
-                apt.StartTime = reservations[i].StartDate;
-                apt.EndTime = reservations[i].EndDate;
-                
-                apt.Subject = Global.companies.Find(c => c.Id == reservations[i].CompanyId).Name;
+                apt.AppointmentID = Global.reservations[i].Id;
+                apt.StartTime = Global.reservations[i].StartDate;
+                apt.EndTime = Global.reservations[i].EndDate;
+
+                apt.Subject = Global.companies.Find(c => c.Id == Global.reservations[i].CompanyId).Name;
                 _myAppointmentsList.Add(apt);
             }
 
@@ -88,7 +87,6 @@ namespace TogetherIsBetter
                 }
 
                 // reload companies and refresh ListBox
-                _myAppointmentsList.Clear();
                 loadCalendar();
             }
 
@@ -122,6 +120,8 @@ namespace TogetherIsBetter
 
             ReservationFrm reservationFrm = new ReservationFrm(reservation);
             bool result = (bool)reservationFrm.ShowDialog();
+
+            loadCalendar();
         }
 
         private void DisplayMonthChanged(MonthChangedEventArgs e)
