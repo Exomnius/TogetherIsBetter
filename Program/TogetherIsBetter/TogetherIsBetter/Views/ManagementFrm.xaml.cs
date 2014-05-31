@@ -195,13 +195,13 @@ namespace TogetherIsBetter.Views
             int index = lvContracts.SelectedIndex;
             if (index == -1) return;
 
-            MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this contract?", "Are you sure?", MessageBoxButton.YesNo);
+            MessageBoxResult result = MessageBox.Show("Are you absolutely sure you want to delete this contract?", "Are you sure?", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
                 try
                 {
                     Generic<Contract> generic = new Generic<Contract>();
-                    generic.Delete(Global.contracts[index]);
+                    generic.Delete((Contract)lvContracts.SelectedItem);
                     generic.Dispose();
 
                     MessageBox.Show("The contract was removed successfully", "Contract removed", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -389,10 +389,25 @@ namespace TogetherIsBetter.Views
                 return;
             }
             
-            if (monthsNotice != null && DateTime.Today.AddMonths((int)monthsNotice) < endDate)
+            if (monthsNotice != null && DateTime.Today.AddMonths((int)monthsNotice) > endDate)
             {
-                MessageBox.Show(String.Format("This contract can't be stopped. The contract formula requires a {0} month notice and this contract ends {1:dd-mm-yy}. ", (int)monthsNotice, endDate), "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(String.Format("This contract can't be stopped. The contract formula requires a {0} month notice and this contract ends {1:dd-MM-yy}. ", (int)monthsNotice, endDate), "Info", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
+            }
+
+            // check for reservations during this contract
+            Generic<Reservation> generic = new Generic<Reservation>();
+            Global.reservations = generic.GetAll().ToList();
+            generic.Dispose();
+
+            List<Reservation> companiesReservations = Global.reservations.FindAll(r => r.CompanyId == contract.CompanyId);
+            foreach (Reservation reservation in companiesReservations)
+            {
+                if (reservation.StartDate <= contract.EndDate && reservation.StartDate >= contract.StartDate)
+                {
+                    MessageBox.Show("This contract can't be stopped. There are existing reservations during this contract");
+                    return;
+                }
             }
 
             if (monthsNotice == null)

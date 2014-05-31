@@ -260,10 +260,24 @@ namespace TogetherIsBetter.Views
                 return;
             }
 
-            if (monthsNotice != null && DateTime.Today.AddMonths((int)monthsNotice) < endDate)
+            if (monthsNotice != null && DateTime.Today.AddMonths((int)monthsNotice) > endDate)
             {
-                MessageBox.Show(String.Format("This contract can't be stopped. The contract formula requires a {0} month notice and this contract ends {1:dd-mm-yy}. ", (int)monthsNotice, endDate), "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(String.Format("This contract can't be stopped. The contract formula requires a {0} month notice and this contract ends {1:dd-MM-yy}. ", (int)monthsNotice, endDate), "Info", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
+            }
+            
+            // check for reservations during this contract
+            Generic<Reservation> generic = new Generic<Reservation>();
+            Global.reservations = generic.GetAll().ToList();
+            generic.Dispose();
+
+            List<Reservation> companiesReservations = Global.reservations.FindAll(r => r.CompanyId == contract.CompanyId);
+            foreach (Reservation reservation in companiesReservations)
+            {
+                if(reservation.StartDate <= contract.EndDate && reservation.StartDate >= contract.StartDate){
+                    MessageBox.Show("This contract can't be stopped. There are existing reservations during this contract");
+                    return;
+                }
             }
 
             if (monthsNotice == null)
